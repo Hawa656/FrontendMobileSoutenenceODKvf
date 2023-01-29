@@ -1,3 +1,50 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-header-bg "></div>
+      <!-- PHOTO PROFIL -->
+      <div class="header-content">
+        <img src="../assets/Soutenance/profil.jpeg" class=" float-right " alt="profil">
+        <ion-label>
+          <h2 class="my-2">Hawa Coulibaly</h2>
+        </ion-label>
+      </div>
+      <!-- ELEMENTS DU MENU -->
+      <ion-list class="menu-items" lines="none" style="background: #25503F;">
+        <ion-item routerLink="/tabs/fruits" >
+          <img src="../assets/Soutenance/iconfruit.png"  alt="">
+          <ion-label >Fruits</ion-label>
+        </ion-item>
+        <ion-item class="active" routerLink="/tabs/legumes">
+          <img src="../assets/Soutenance/iconelegume.png"  alt="">
+          <ion-label>Légumes</ion-label>
+        </ion-item>
+        <ion-item routerLink="/tabs/videos">
+          <ion-icon name="videocam-outline" slot="start" style="color: white;"></ion-icon>
+          <ion-label>Vidéos</ion-label>
+        </ion-item>
+        <ion-item routerLink="/tabs/conseils">
+          <img src="../assets/Soutenance/iconconseil.png"  alt="">
+          <ion-label>Conseils</ion-label>
+        </ion-item>
+        <ion-item routerLink="/tabs/alertes">
+          <img src="../assets/Soutenance/iconalerte.png"  alt="">
+          <ion-label>Alertes</ion-label>
+        </ion-item>
+        <ion-item routerLink="/tabs/">
+          <ion-icon name="notifications-outline" slot="start" style="color: white;"></ion-icon>
+          <ion-label>Notifications</ion-label>
+        </ion-item>
+        <ion-item routerLink="/tabs/" >
+          <ion-icon name="chatbubbles-outline" slot="start" style="color: white;"></ion-icon>
+          <ion-label>Forum</ion-label>
+        </ion-item>
+        <ion-item routerLink="/" class="mt-4 bottom-fixed" style="border-top: 1px solid black;">
+          <ion-icon name="log-out-outline" slot="start" style="color: white;"></ion-icon>
+          <ion-label >Déconnexion</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
