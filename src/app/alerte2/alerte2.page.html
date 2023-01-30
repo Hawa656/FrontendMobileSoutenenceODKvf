@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Alerte2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 class="title">Créer une nouvelle alerte</h3>
+  <div class="container-fluid contenu">
+    <p class="pt-4">Preciser la date et l’heure</p>
+    <!-- ===========CALENDAR============= -->
+    <div class="container mb-3 calend" >
+      <ion-datetime color="rose"></ion-datetime>
+    </div>
+    <div class="container">
+      <p>Titre</p>
+      <!-- ===========INPUT============= -->
+      <div class="row mb-4">
+        <ion-item>
+          <ion-input type="text"  name="title"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <div class="container mb-4">
+     <div class="row">
+      <!-- ===========TOGGLE============= -->
+      <div class="col-6 ">
+        <p>Alarm</p>
+        <ion-toggle style="--color: red;" [checked]="true"></ion-toggle>
+      </div>
+      <div class="col-6 mt-4">
+        <ion-button>Enregistrer</ion-button>
+      </div>
+     </div>
+    </div>
+    
+  </div>
+
+</ion-content>

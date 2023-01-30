@@ -1,0 +1,84 @@
+.img{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 200px;
+    width: 100%;
+    height: 150px;
+    margin: 0;
+    // background: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.30)), url(../../assets/Soutenance/189620956-une-agricultrice-travaillant-tôt-à-la-ferme-tenant-un-panier-en-bois-de-légumes-frais-et-une-tablett.webp);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.30)), url(../../assets/Soutenance/bgAccueil.png);
+    background-size: cover;
+}
+h1{
+    position: relative;
+    top: 20%;
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    line-height: 20px;
+    
+}
+
+.textImg{
+    position: relative;
+    top: -40px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    
+}
+.video{
+   background-color: white;
+
+   
+}
+.icon1{
+    font-size: 20px;
+    margin-left: 1px;
+    
+}
+.icon2{
+    font-size: 15px;
+    
+}
+
+.filtreSearchBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+// .filtre{
+//     background: #eeeded;
+// //border: 1px solid #399C28;
+//     border-radius: 4px;
+// }
+.card{
+    overflow-y: scroll;
+    scrollbar-width: none !important;
+    height: 50%;
+    //width: 100%;
+    overflow-x: hidden;
+    border: none;
+    
+}
+.card::-webkit-scrollbar{
+    display: none;
+}
+
+.select{
+    width: 20%;
+    //height: 10%;
+    
+   
+}
+.icon{
+    left: 70%;
+    font-size: 1.2rem;
+    
+    position: relative;
+}

@@ -20,6 +20,38 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'accueil',
+        loadChildren: () => import('../accueil/accueil.module').then( m => m.AccueilPageModule)
+      },
+      {
+        path: 'legumes',
+        loadChildren: () => import('../legumes/legumes.module').then( m => m.LegumesPageModule)
+      },
+      {
+        path: 'fruits',
+        loadChildren: () => import('../fruits/fruits.module').then( m => m.FruitsPageModule)
+      },
+      {
+        path: 'conseils',
+        loadChildren: () => import('../conseils/conseils.module').then( m => m.ConseilsPageModule)
+      },
+      {
+        path: 'videos',
+        loadChildren: () => import('../videos/videos.module').then( m => m.VideosPageModule)
+      },
+      {
+        path: 'alerte1',
+        loadChildren: () => import('../alerte1/alerte1.module').then( m => m.Alerte1PageModule)
+      },
+      {
+        path: 'alerte2',
+        loadChildren: () => import('../alerte2/alerte2.module').then( m => m.Alerte2PageModule)
+      },
+      {
+        path: 'legume-fruit/:id',
+        loadChildren: () => import('../legume-fruit/legume-fruit.module').then( m => m.LegumeFruitPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
