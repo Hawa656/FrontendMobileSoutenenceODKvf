@@ -1,0 +1,68 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../_services/auth.service';
+import { StorageService } from '../_services/storage.service';
+
+@Component({
+  selector: 'app-connexion1',
+  templateUrl: './connexion1.page.html',
+  styleUrls: ['./connexion1.page.scss'],
+})
+export class Connexion1Page implements OnInit {
+  form: any = {
+    numeroOrEmail: null,
+    password: null
+  };
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+
+  constructor(private authService: AuthService, private storageService: StorageService, private route : Router) { }
+
+  ngOnInit(): void {
+    if (this.storageService.isLoggedIn()) {
+      this.isLoggedIn = true;
+      //RECUPERATION DU ROLE DE L'UTILISATEUR CONNECTE
+      this.roles = this.storageService.getUser().roles;
+    }
+  }
+//METHODE PERMETTANT DE SE CONNECTER 
+Connexion(): void {
+    const { numeroOrEmail, password } = this.form;
+
+    this.authService.login(numeroOrEmail, password).subscribe({
+      next: data => {
+        this.storageService.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.storageService.getUser().roles;
+
+        if(this.roles[0]=="ROLE_USER"){
+          this.route.navigate(['/tabs/accueil'])
+        }
+        //this.reloadPage();
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    });
+  }
+
+  logout(): void {
+    this.authService.logout().subscribe({
+      next: res => {
+        console.log(res);
+        this.storageService.clean();
+
+        window.location.reload();
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
+  }
+
+}

@@ -1,0 +1,88 @@
+<ion-content class="content">
+  <h1 class="h1 pt-5 pb-2">Se connecter</h1>
+
+  <div class="container">
+    <div class="photo">
+      <ion-img width="10" height="10" src="../../assets/Soutenance/legumefruit.png "></ion-img>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && Connexion()" #f="ngForm" novalidate>
+      <div class="mb-3">
+        <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Entrer votre email ou numéro"
+          type="text"
+          class="form-control"
+          name="numeroOrEmail"
+          [(ngModel)]="form.numeroOrEmail"
+          required
+          #numeroOrEmail="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && numeroOrEmail.errors }">
+          <div *ngIf="numeroOrEmail.errors && f.submitted" class="invalid-feedback">
+            numero ou l'email est obligatoire!
+          </div>
+
+      </div>
+      <div class="mb-3">
+        <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+        <input type="password"  id="exampleInputPassword1" placeholder="Entrer votre mot de passe"
+        type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+        >
+        <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="password.errors['required']">Mot de passe obligatoire</div>
+          <div *ngIf="password.errors['minlength']">
+            le mot de passe doit avoir au moins 6 caratères
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Se connecter</button>
+      <div class="form-group">
+        <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+          Login failed: {{ errorMessage }}
+        </div>
+      </div>
+
+    </form>
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+      Logged in as {{ roles }}.
+      <button (click)="logout()"></button>
+    </div>
+
+    <a href="#">
+      <p class="text-center   mt-3 link1">Mot de passe oublié ?</p>
+    </a>
+    <!-- =====================ICON========================= -->
+    <div class="ion-text-center pt-3">
+      <a href="">
+        <ion-icon slot="start" class="mx-1" name="logo-facebook"></ion-icon>
+      </a>
+      <a href="">
+        <ion-icon slot="start" class="mx-1" name="logo-google" color="danger"></ion-icon>
+      </a>
+      <a href="">
+        <ion-icon color="light" slot="start" name="logo-github" color="dark"></ion-icon>
+      </a>
+    </div>
+  </div>
+  <a href="#" routerLink="/inscription">
+    <p class="text-center   mt-2 link1">Créer un compte?</p>
+  </a>
+  
+
+  <a class="link2" routerLink="/accueil">
+    <p class="text-center  text-light pt-0 mt-3" style="text-decoration: underline white;">Continuer sans compte?</p>
+  </a>
+    
+  
+</ion-content>

@@ -1,0 +1,67 @@
+.content{
+    --ion-background-color: #2D6650;
+}
+
+ button,
+ input{
+    font-size: 12px;
+    border-radius: 15px;
+     height: 35px;
+   //  width: 200px;
+    background-color: white;
+}
+ button{
+    background-color: #FBC201;
+    color: white;
+    border: none;
+    width: 100%;
+ }
+
+ ion-icon{
+    width: 20px;
+    height: 20px;
+
+ }
+ .p{
+    font-size: 12px;
+ }
+ ion-button{
+   --background: none;
+   --box-shadow: none;
+ }
+ ion-button:hover{
+   background-color: none;
+   box-shadow: none;
+ }
+ .h1{
+   color: white;
+   font-size: 30px;
+   font-weight: bold;
+   text-align: center;
+ }
+ .link2,
+ .link1{
+   color: white;
+   font-size: 14px;
+ }
+
+element.style {
+  background:red;
+}
+button,ion-button,.link2,
+.link1:hover{
+ 
+  text-decoration: none;
+
+}
+.link1,
+.link2{
+  margin: 0;
+  padding: 0;
+  display:flex ;
+  align-items: center;
+  justify-content: center;
+}
+a{
+    text-decoration: underline white;
+}
