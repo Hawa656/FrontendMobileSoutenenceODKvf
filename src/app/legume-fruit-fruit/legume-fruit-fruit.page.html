@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title color="light" class="text-center">{{Legume.nom}}</ion-title>
+    <ion-title color="light" class="text-center">{{Fruit.nom}}</ion-title>
      
     <ion-button class="button">
       <ion-icon name="arrow-back-outline"></ion-icon>
@@ -14,7 +14,7 @@
 
   <div class="container containerImg ">
     <div class=" row text">
-      <img class="imFruit mt-2" src="{{Legume.photo}}">
+      <img class="imFruit mt-2" src="{{Fruit.photo}}">
     </div>
   </div>
   
@@ -42,17 +42,17 @@
         <div class="col-6 ">
          <div class="rectangle1">
           <h5 class="text-center">Récolte</h5>
-          <p class="text-center">{{Legume.dureeFloraisaon}}</p>
+          <p class="text-center">{{Fruit.dureeFloraisaon}}</p>
          </div>
         </div>
         
         <div class="col-6 ">
           <div class="rectangle1 ">
            <h6 class="text-center">Espacement</h6>
-           <p class="text-center">{{Legume.tutoriels.espacementEntreGraine}}</p>
+           <p class="text-center">{{Fruit.tutoriels.espacementEntreGraine}}</p>
           </div>
          </div>
-         <p class="text">{{Legume.description}}</p>
+         <p class="text">{{Fruit.description}}</p>
       </div>
     </div>
    
@@ -62,25 +62,25 @@
    <div  class="container-fluid  mt-2">
       <div class="row mt-4 px-2">
         
-        <h3 class="title fw-bolder">{{Legume.tutoriels.titre}}</h3>
+        <h3 class="title fw-bolder">{{Fruit.tutoriels.titre}}</h3>
         <p class="textP">
-          {{Legume.tutoriels.description}}
+          {{Fruit.tutoriels.description}}
         </p>
         <div class="fw-bolder list">
           <ul>
-            <li>Semis : {{Legume.tutoriels.semis}}</li>
-            <li>Bouture : {{Legume.tutoriels.bouture}}</li>
-            <li>Etat de la terre : {{Legume.tutoriels.etatDeLaTerre}}</li>
-            <li>Floraison : {{Legume.dureeFloraisaon}}</li>
-            <li>Periode normale : {{Legume.periodeNormal}}</li>
+            <li>Semis : {{Fruit.tutoriels.semis}}</li>
+            <li>Bouture : {{Fruit.tutoriels.bouture}}</li>
+            <li>Etat de la terre : {{Fruit.tutoriels.etatDeLaTerre}}</li>
+            <li>Floraison : {{Fruit.dureeFloraisaon}}</li>
+            <li>Periode normale : {{Fruit.periodeNormal}}</li>
           </ul>
         </div>
       </div>
       
       <div class="container ">
         <div class="row">
-         <video  controls src="http://127.0.0.1/imageSoutenance/{{Legume.video.video}}" class="video"></video>
-         <h4 class="textImg mx-3">{{Legume.video.titre}</h4>
+         <video  controls src="../../assets/Soutenance/video2.mp4" class="video"></video>
+         <h4 class="textImg mx-3">Culture du grenadier</h4>
         </div>
        </div>
    </div>

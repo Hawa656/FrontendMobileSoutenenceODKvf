@@ -1,0 +1,81 @@
+
+// h1{
+//     position: relative;
+//     top: 20%;
+//     font-size: 30px;
+//     font-weight: bolder;
+//     color: black;
+//     margin: 0;
+//     padding: 0;   
+// }
+// .containerImg{
+//     margin: 0;
+//     padding: 0;
+    
+// }
+.imFruit{
+    border-radius: 18px;
+}
+.contenu{
+    background: rgba(50, 137, 35, 0.62);
+    border-radius: 34px 40px 0px 7px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50vh;
+
+}
+.rectangle1{
+    background: #FFFFFF;
+border-radius: 10px;
+}
+p{
+    font-size: 12px;
+
+}
+.text{
+    color: #FFFFFF;
+}
+.textImg{
+    position: relative;
+    top: -40px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    
+}
+.video{
+    border-radius: 15px;
+    
+}
+ion-toolbar{
+    --background: #328923;
+}
+.button{
+    --background: none;
+    --box-shadow: none;
+   
+}
+.label{
+    color: black;
+}
+ion-label {
+    color: #fff;
+}
+
+
+::part(indicator-background) {
+    background-color: #328923;
+  }
+  .segment-button-checked ::ng-deep{
+    border-color: #328923;
+  }
+
+  .textP,
+  .list{
+    font-size: 12px;
+  }
+  video{
+    margin-bottom: 60px;
+  }

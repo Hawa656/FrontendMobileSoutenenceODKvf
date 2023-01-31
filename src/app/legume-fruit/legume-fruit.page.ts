@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LegumeFruitService } from '../_services/legume-fruit.service';
+import { VideosService } from '../_services/videos.service';
 
 @Component({
   selector: 'app-legume-fruit',
@@ -11,8 +12,9 @@ export class LegumeFruitPage implements OnInit {
   valueSelected:any='Description'
 
   Legume : any
+  // Fruit : any
   id: any
-  constructor(private route : ActivatedRoute, private legumeFruitService : LegumeFruitService) { }
+  constructor(private route : ActivatedRoute, private legumeFruitService : LegumeFruitService,private videoService: VideosService) { }
 
   ngOnInit() {
    //RECUPERER L'ID DU LEGUME

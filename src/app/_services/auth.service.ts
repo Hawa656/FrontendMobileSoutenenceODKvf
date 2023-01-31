@@ -29,9 +29,9 @@ export class AuthService {
   }
 // +++++++++++++++++CREATION DE COMPTE+++++++++++++++++++++++
   register(nom: string, prenom: string, numero: string, email: string, password: string, confirmPassword: string): Observable<any> {
-    const pseudo = "hawaC";
-    const username = "keita"
-    alert(confirmPassword)
+    // const pseudo = "hawaC";
+    // const username = "keita"
+    // alert(confirmPassword)
     return this.http.post(
       AUTH_API + 'signup',
       {

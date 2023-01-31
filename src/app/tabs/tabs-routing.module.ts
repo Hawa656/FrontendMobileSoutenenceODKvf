@@ -52,17 +52,25 @@ const routes: Routes = [
         loadChildren: () => import('../legume-fruit/legume-fruit.module').then( m => m.LegumeFruitPageModule)
       },
       {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
+        path: 'legume-fruit-fruit/:id',
+        loadChildren: () => import('../legume-fruit-fruit/legume-fruit-fruit.module').then( m => m.LegumeFruitFruitPageModule)
+      },
+      {
+        path: 'details-conseil/:id',
+        loadChildren: () => import('../details-conseil/details-conseil.module').then( m => m.DetailsConseilPageModule)
+      },
+      // {
+      //   path: '',
+      //   redirectTo: '/tabs/tab1',
+      //   pathMatch: 'full'
+      // }
     ]
   },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
-  }
+  // {
+  //   path: '',
+  //   redirectTo: '/tabs/tab1',
+  //   pathMatch: 'full'
+  // }
 ];
 
 @NgModule({

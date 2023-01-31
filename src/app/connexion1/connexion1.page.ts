@@ -41,7 +41,10 @@ Connexion(): void {
 
        
         // POUR REDIRIGER VERS LA PAGE D4ACCUEIL UNE FOIS CONNECTE
-        this.route.navigate(['/tabs/accueil']);
+        if(this.roles[0]=="ROLE_USER"){
+          this.route.navigate(['/tabs/accueil'])
+        }
+        
         
       },
       error: err => {

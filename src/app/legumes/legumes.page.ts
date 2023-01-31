@@ -20,7 +20,7 @@ export class LegumesPage implements OnInit {
     })
   }
 
-  //LA METHODE PERMETTANT DE NAVIGER VER LA PAGE DU DETAILS LEGUME
+  //LA METHODE PERMETTANT DE NAVIGER VERS LA PAGE DU DETAILS LEGUME
   goToDetailLegume(id:number){
     return this.route.navigate(['/tabs/legume-fruit', id])
   }

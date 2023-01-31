@@ -18,7 +18,7 @@
     <div class="col-3">
       <div class="filtre ">
         <ion-icon class="icon1 " name="filter-outline" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></ion-icon>
-        <!-- <ion-icon class="icon2" name="chevron-down-outline"></ion-icon> -->
+        
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -45,7 +45,7 @@
     <ion-col size="6" class="" *ngFor="let Legume of legume">
       <a (click)="goToDetailLegume(Legume.id)">
         <ion-card>
-          <img src="{{Legume.photo}}" alt="image de fruit" class="img2">
+          <img src="{{Legume.photo}}" alt="image de legume" class="img2">
           <div class="card-title mx-2">{{Legume.nom}}</div>
         </ion-card>
       </a>

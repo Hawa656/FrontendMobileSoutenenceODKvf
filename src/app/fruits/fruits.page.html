@@ -42,70 +42,17 @@
     <!-- ===============CARD==================== -->
 
   <ion-row class="mt-2" >
-    <ion-col size="6" class="">
+    <ion-col size="6" *ngFor="let Fruit of fruit">
+      <a (click)="goToDetailFruit(Fruit.id)">
       <ion-card>
-        <img src="../../assets/Soutenance/goyavier.jpg" alt="image de fruit" class="img2">
-        <div class="card-title mx-2">Carotte</div>
+        <img src="{{Fruit.photo}}" alt="image de fruit" class="img2">
+        <div class="card-title mx-2">{{Fruit.nom}}</div>
       </ion-card>
+    </a>
     </ion-col>
-  
-    <ion-col size="6">
-      <ion-card>
-        <img src="../../assets/Soutenance/goyavier.jpg" alt="image de fruit">
-        <div class="card-title mx-2">celeri</div>
-      </ion-card>
-    </ion-col>
+    
+    
   </ion-row>
 
-
-
-  <ion-row class="">
-    <ion-col size="6" class="">
-      <ion-card>
-        <img src="../../assets/Soutenance/goyavier.jpg" alt="image de fruit" class="img2">
-        <div class="card-title mx-2">Tomate</div>
-      </ion-card>
-    </ion-col>
-  <!-- ======================================= -->
-    <ion-col size="6">
-      <ion-card>
-        <img src="../../assets/Soutenance/goyavier.jpg" alt="image de fruit">
-        <div class="card-title mx-2">Tomate</div>
-      </ion-card>
-    </ion-col >
-  </ion-row>
-
-  <ion-row class="">
-    <ion-col size="6" class="">
-      <ion-card>
-        <img src="../../assets/Soutenance/goyavier.jpg" alt="image de fruit" class="img2">
-        <div class="card-title mx-2">goyavier</div>
-      </ion-card>
-    </ion-col>
-  <!-- ======================================= -->
-    <ion-col size="6">
-      <ion-card>
-        <img src="../../assets/Soutenance/goyavier.jpg" alt="image de fruit">
-        <div class="card-title mx-2">goyavier</div>
-      </ion-card>
-    </ion-col >
-  </ion-row>
-
-  <ion-row class="">
-    <ion-col size="6" class="">
-      <ion-card>
-        <img src="../../assets/Soutenance/goyavier.jpg" alt="image de fruit" class="img2">
-        <div class="card-title mx-2">goyavier</div>
-      </ion-card>
-    </ion-col>
-  <!-- ======================================= -->
-    <ion-col size="6">
-      <ion-card>
-        <img src="../../assets/Soutenance/goyavier.jpg" alt="image de fruit">
-        <div class="card-title mx-2">goyavier</div>
-      </ion-card>
-    </ion-col >
-  </ion-row>
-  
 </div> 
 </ion-content>

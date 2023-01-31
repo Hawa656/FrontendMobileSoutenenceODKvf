@@ -11,9 +11,14 @@ export class LegumeFruitService {
 
   constructor(private http : HttpClient) { }
 
-  //AFFICHAGE DES LEGUMES ET FRUITS
+  //AFFICHAGE DES LEGUMES 
   getLegume():Observable<any>{
     return this.http.get(`${this.api}/lireLegumes`);
+  }
+
+  //AFFICHAGE DES FRUITS
+  getFruit():Observable<any>{
+    return this.http.get(`${this.api}/lireFruits`)
   }
 
    //RECUPERATION DE L'ID DU LEGUMES 

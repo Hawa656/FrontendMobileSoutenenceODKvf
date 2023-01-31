@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'alerte2',
     loadChildren: () => import('./alerte2/alerte2.module').then( m => m.Alerte2PageModule)
+  },
+  {
+    path: 'legume-fruit-fruit',
+    loadChildren: () => import('./legume-fruit-fruit/legume-fruit-fruit.module').then( m => m.LegumeFruitFruitPageModule)
   }
 ];
 @NgModule({
