@@ -58,6 +58,10 @@ const routes: Routes = [
   {
     path: 'legume-fruit-fruit',
     loadChildren: () => import('./legume-fruit-fruit/legume-fruit-fruit.module').then( m => m.LegumeFruitFruitPageModule)
+  },
+  {
+    path: 'forum',
+    loadChildren: () => import('./forum/forum.module').then( m => m.ForumPageModule)
   }
 ];
 @NgModule({

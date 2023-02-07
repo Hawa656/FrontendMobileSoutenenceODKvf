@@ -1,3 +1,17 @@
+
+
+// ================SCROLL-BAR========================
+ion-content {
+  --offset-bottom:auto !important;
+  --overflow: hidden;
+  background-color: #fff;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+      display: none;
+  }
+}
+// ================SCROLL-BAR========================
 .contenu{
     //background:#71A255;
     background: rgba(45, 102, 80, 0.22);

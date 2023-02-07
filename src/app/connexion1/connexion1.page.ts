@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { AuthService } from '../_services/auth.service';
 import { StorageService } from '../_services/storage.service';
 
@@ -44,6 +45,17 @@ Connexion(): void {
         if(this.roles[0]=="ROLE_USER"){
           this.route.navigate(['/tabs/accueil'])
         }
+        if (this.roles[0]=="ROLE_ADMIN") {
+           console.log('veuillez créer un compte utilisateur');
+          //  Swal.fire({  
+          //   icon: 'error',  
+          //   title: 'Oops...',  
+          //   text: 'Something went wrong!',  
+          // })  
+           
+        }
+         
+        
         
         
       },

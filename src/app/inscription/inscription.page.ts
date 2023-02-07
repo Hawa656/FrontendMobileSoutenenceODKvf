@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class InscriptionPage implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private route:Router) { }
 
   ngOnInit() {
   }
@@ -31,6 +32,15 @@ export class InscriptionPage implements OnInit {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        
+
+        this.sleep(2000).then(() => {     
+          // Call function after the sleep()
+          console.log('Sleep function is working!') 
+          this.route.navigate(['/connexion1'])}
+          )
+        
+        
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -38,5 +48,9 @@ export class InscriptionPage implements OnInit {
       }
     });
   }
-
+  sleep(duration:any) {   
+    return new Promise((resolve) => setTimeout(resolve, duration)); 
+  }   
+   
+    
 }

@@ -1,28 +1,33 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const API_URL = 'http://localhost:8080/api/test/';
+
+const AUTH_API = 'http://localhost:8080/api/auth/';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
 
-  getPublicContent(): Observable<any> {
-    return this.http.get(API_URL + 'all', { responseType: 'text' });
-  }
+  constructor(private http: HttpClient) { }
 
-  getUserBoard(): Observable<any> {
-    return this.http.get(API_URL + 'user', { responseType: 'text' });
-  }
-  
-  getModeratorBoard(): Observable<any> {
-    return this.http.get(API_URL + 'mod', { responseType: 'text' });
-  }
-
-  getAdminBoard(): Observable<any> {
-    return this.http.get(API_URL + 'admin', { responseType: 'text' });
+  // +++++++++++++++++MODIFIER UN UTILISATEUR+++++++++++++++++++++++
+  modifieruser(nom: string, prenom: string, numero: string, email: string, id:any): Observable<any> {
+    return this.http.put(
+      AUTH_API + 'user/' + `${id}`,
+      {
+        "email":email,
+         "numero":numero,
+         "nom":nom,
+         "prenom":prenom,
+         "id":id
+    },
+      httpOptions
+    );
   }
 }

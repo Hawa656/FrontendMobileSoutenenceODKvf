@@ -8,7 +8,10 @@ import { VideosService } from '../_services/videos.service';
 })
 export class VideosPage implements OnInit {
   video : any
-
+  qbq: any='fruit'
+  AOUA:any;
+  textFiltree:any
+  selectedOption: any;
   constructor(private videoService : VideosService) { }
 
   ngOnInit() {
@@ -17,6 +20,29 @@ export class VideosPage implements OnInit {
           this.video = data;
           console.log(this.video)
         })
+// ==========================FILTRAGE==============================
+        //FILTRER LES VIDEOS PAR FRUITS OU LEGUMES
+        this.videoService.getFiltrerParFruitEtLegume(this.qbq).subscribe(data=>{
+          this.video = data;
+          console.log(this.video)
+        })
   }
+
+  cangement(){
+    console.log("ertyui"+this.textFiltree);
+    this.videoService.getFiltrerParFruitEtLegume(this.textFiltree).subscribe(data=>{
+      this.video = data;
+      console.log("filtre")
+      console.log(this.video)
+  }
+    )
+  }
+// ==========================FILTRAGE==============================
+
+
+  // handleSelection(event:any) {
+  //   this.selectedOption = event.target.innerText;
+  //   console.log('sdxfcghb'+this.selectedOption)
+  //   }
 
 }

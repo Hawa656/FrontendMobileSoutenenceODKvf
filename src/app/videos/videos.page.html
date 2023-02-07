@@ -20,22 +20,31 @@
 <!-- ================SEARCHBAR=================== -->
   <div class="container mb-2">
     <div class="filtreSearchBar row ">
-      <div class="col-3">
-        <div class="filtre ">
+      <div class="col-6">
+        <!--div class="filtre ">
           <ion-icon class="icon1 " name="filter-outline" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></ion-icon>
-          <!-- <ion-icon class="icon2" name="chevron-down-outline"></ion-icon> -->
+          <-- <ion-icon class="icon2" name="chevron-down-outline"></ion-icon> >
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Fruits</a>
-            <a class="dropdown-item" href="#">Legumes </a>
+            <a class="dropdown-item" (ionSelect)="handleSelection($event)">Fruits</a>
+            <a class="dropdown-item" (ionSelect)="handleSelection($event)">Legumes </a>
             
           </div>
-
-
          
 
+        </div-->
+        <!-- +++++++++++++++++++FILTRAGE++++++++++++++++++++++++++++++++++ -->
+         <div class="filtre ">
+          <!-- <ion-icon class="icon1 " name="filter-outline" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></ion-icon>
+           -->
+        <select class="form-selec form-selec-md larger" aria-label="filtrer" (change)="cangement()"   name="textFiltree"  [(ngModel)]="textFiltree">
+          <label for="" class="text-dark">Filtrer</label>
+          <option >Fruit</option>
+          <option>Legume</option>
+        </select>
         </div>
+
       </div>
-      <div class="col-9 searchbar">
+      <div class="col-6 searchbar">
         <ion-searchbar></ion-searchbar>
       </div>
     </div>

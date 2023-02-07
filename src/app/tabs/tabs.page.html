@@ -7,22 +7,25 @@
       <ion-label>Tab 1</ion-label>
     </ion-tab-button> -->
   
-  <ion-menu-toggle style="margin-left: 2%;" >
+
+  <ion-menu-toggle style="margin-left: 11%;" >
     <ion-tab-button >
       <ion-icon class="menu " name="menu" ></ion-icon> 
       <ion-label class="textMenu ">Menu</ion-label>
     </ion-tab-button>
   </ion-menu-toggle>
 
-    <ion-tab-button tab="accueil" class="mx-4" style="background: #25503F;">
+    <ion-tab-button tab="accueil"  style="background: #25503F;margin-left: 5%; 
+  ">
       <ion-icon name="home"></ion-icon>
       <ion-label>Accueil</ion-label>
     </ion-tab-button>
-
-    <ion-tab-button tab="tab3">
+    <!-- ==============ngIF cacher profil=============== -->
+    <ion-tab-button tab="tab3" *ngIf="isLoggedIn">
       <ion-icon name="person"></ion-icon>
-      <ion-label>Profil</ion-label>
+      <ion-label >Profile</ion-label>
     </ion-tab-button>
+    
   </ion-tab-bar>
 
 </ion-tabs>

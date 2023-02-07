@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class LegumeFruitService {
 
   api= "http://localhost:8080/api/legumefruit";
+  api1= "http://localhost:8080/api/video";
 
   constructor(private http : HttpClient) { }
 
@@ -20,6 +21,12 @@ export class LegumeFruitService {
   getFruit():Observable<any>{
     return this.http.get(`${this.api}/lireFruits`)
   }
+
+  //AFFICHE (la video de la page legumeFruit) LES INFO SUR LEGUMESFRUITS, VIDEO ,TUTORIELS
+  getTousLesInfoSurUnLegumeFruit(idLegumesFruits:any):Observable<any>{
+    return this.http.get(`${this.api1}/videoparIdLegumeFruit/${idLegumesFruits}`);
+  }
+
 
    //RECUPERATION DE L'ID DU LEGUMES 
    recupererIdLegumeFruit(id:number):Observable<any>{

@@ -1,17 +1,141 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <!-- <ion-toolbar>
+    
+  </ion-toolbar> -->
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class=" mt-0 tout" style="background: #25503F; ">
+    <div class="header    text-center d-flex"  style="color: white;">
+      <!-- <ion-button slot="start"> -->
+        <ion-back-button text="" defaultHref="/connexion1" name="arrow-back-outline" class="me-4 text-white mx-4" style="background: none;"></ion-back-button>
+      <!-- </ion-button> -->
+      <h4 class="fw-bolder"> Changer profil</h4> 
+   </div>
+ 
+ <div class="container-fluid content">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-</ion-content>
+  <!-- PHOTO PROFIL -->
+  <div class="header-content">
+    <img src="../assets/Soutenance/profil.jpeg" class=" float-right mt-4" alt="profil">
+    
+  </div>
+  
+    <div class="container">
+     <form  class="pt-3 "
+     *ngIf="!isSuccessful"
+     name="form"
+     (ngSubmit)="f.form.valid && onSubmit()"
+     #f="ngForm"
+     novalidate
+     >
+
+      
+      <input class="form-control mb-3" id="exampleInputNom"
+      placeholder="Entrer votre nom"
+      type="text"
+      name="nom"
+          [(ngModel)]="form.nom"
+          required
+          minlength="3"
+          maxlength="20"
+          #nom="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && nom.errors }"
+         
+      >
+      <div class="invalid-feedback" *ngIf="nom.errors && f.submitted">
+        <div *ngIf="nom.errors['required']">Le nom est obligatoire</div>
+        <div *ngIf="nom.errors['minlength']">
+          Le nom doit au moins avoir 3 caratères
+        </div>
+        <div *ngIf="nom.errors['maxlength']">
+          Le nom doit au plus avoir 20 caratères
+        </div>
+      </div>
+      
+      <input  class="form-control mb-3" 
+      placeholder="Entrer votre prenom"
+      type="text"
+      name="prenom"
+      [(ngModel)]="form.prenom"
+      required
+      minlength="3"
+      maxlength="20"
+      #prenom="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && prenom.errors }"
+      >
+      <div class="invalid-feedback" *ngIf="prenom.errors && f.submitted">
+        <div *ngIf="prenom.errors['required']">Le prenom est obligatoire</div>
+        <div *ngIf="prenom.errors['minlength']">
+          Le prenom doit au moins avoir 3 caratères
+        </div>
+        <div *ngIf="prenom.errors['maxlength']">
+          Le prenom doit au plus avoir 20 caratères
+        </div>
+      </div>
+      
+      <input type="text" class="form-control mb-3" id="exampleInputNumero"
+      placeholder="Entrer votre numero"
+      type="text"
+      name="numero"
+      [(ngModel)]="form.numero"
+      required
+      minlength="8"
+      maxlength="12"
+      #numero="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && numero.errors }"
+          >
+          <div class="invalid-feedback" *ngIf="numero.errors && f.submitted">
+            <div *ngIf="numero.errors['required']">Le numero est obligatoire</div>
+            <div *ngIf="numero.errors['minlength']">
+              Le numero doit au moins avoir 8 caratères
+            </div>
+            <div *ngIf="numero.errors['maxlength']">
+              Le numero doit au plus avoir 12 caratères
+            </div>
+          </div>  
+         
+      <input   id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Entrer votre email" class="form-control mb-3"
+      type="email"
+      name="email"
+      [(ngModel)]="form.email"
+      required
+      email
+      #email="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+      >
+      <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors['required']">Email obligatoire</div>
+        <div *ngIf="email.errors['email']">
+         Votre email doit être un email valide
+        </div>
+      </div>
+<!--     
+      <input class="form-control mb-3" id="exampleInputpw" 
+      placeholder="Entrer votre Mot de passe"
+      type="password"
+            
+      >
+    
+      <input  class="form-control mb-3" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Confirmer votre Mot de passe"
+      type="password"
+     
+     
+      > -->
+      
+
+      
+      <input type="submit" class="form-control button mb-0" value="Enregistrer" style="background: #FBC201; color: white;" />
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
+     
+     </form>
+     <div class="alert alert-success" *ngIf="isSuccessful">
+      Compte modifier avec succès!
+    </div>
+     
+    </div>
+ </div>
+  </div>

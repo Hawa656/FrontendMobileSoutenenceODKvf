@@ -59,6 +59,10 @@ const routes: Routes = [
         path: 'details-conseil/:id',
         loadChildren: () => import('../details-conseil/details-conseil.module').then( m => m.DetailsConseilPageModule)
       },
+      {
+        path: 'forum',
+        loadChildren: () => import('../forum/forum.module').then( m => m.ForumPageModule)
+      }
       // {
       //   path: '',
       //   redirectTo: '/tabs/tab1',

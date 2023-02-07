@@ -12,6 +12,12 @@ import { AuthService } from './_services/auth.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit{
+  //==============ngIF cacher profil===============
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+  //==============ngIF cacher profil===============
   user: any;
   constructor(private router:Router,private userService:StorageService,private authService: AuthService,private routeDeconnexion : Router) {
   }
@@ -25,19 +31,34 @@ export class AppComponent implements OnInit{
       this.initializeApp();
     }
         
+    
+    
 // =========================================
 // ===================Deconnexion===============
   }
-  deconnexion() {
-    this.authService.logout()
-window.location.reload()
-    this.routeDeconnexion.navigate(['/connexion1'])
+
+
+  deconnexion(): void {
+    this.authService.logout().subscribe({
+      next: res => {
+        console.log(res);
+        this.userService.clean();
+        window.location.reload();
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
   }
 // ========================================
   initializeApp(){
   this.router.navigateByUrl("connexion1")
 }
+
+
+  
 }
+
 
 
 

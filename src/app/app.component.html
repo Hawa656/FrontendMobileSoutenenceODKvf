@@ -11,35 +11,39 @@
       </div>
       <!-- ELEMENTS DU MENU -->
       <ion-list class="menu-items" lines="none" style="background: #25503F;">
-        <ion-item routerLink="/tabs/fruits" >
+        <ion-item routerLinkActive="active" routerLink="/tabs/fruits" >
           <img src="../assets/Soutenance/iconfruit.png"  alt="">
           <ion-label >Fruits</ion-label>
         </ion-item>
-        <ion-item class="active" routerLink="/tabs/legumes">
+        <ion-item routerLinkActive="active" routerLink="/tabs/legumes">
           <img src="../assets/Soutenance/iconelegume.png"  alt="">
           <ion-label>Légumes</ion-label>
         </ion-item>
-        <ion-item routerLink="/tabs/videos">
+        <ion-item routerLinkActive="active" routerLink="/tabs/videos">
           <ion-icon name="videocam-outline" slot="start" style="color: white;"></ion-icon>
           <ion-label>Vidéos</ion-label>
         </ion-item>
-        <ion-item routerLink="/tabs/conseils">
+        <ion-item routerLinkActive="active" routerLink="/tabs/conseils">
           <img src="../assets/Soutenance/iconconseil.png"  alt="">
           <ion-label>Conseils</ion-label>
         </ion-item>
-        <ion-item routerLink="/tabs/alerte1">
+        <ion-item   routerLink="/connexion1"  *ngIf="user==false">
+          <!-- <img src="../assets/Soutenance/iconalerte.png"  alt=""> -->
+          <ion-label style="color: #FBC201;">Se connecter</ion-label>
+        </ion-item>
+        <ion-item routerLinkActive="active" routerLink="/tabs/alerte1"  *ngIf="user">
           <img src="../assets/Soutenance/iconalerte.png"  alt="">
           <ion-label>Alertes</ion-label>
         </ion-item>
-        <ion-item routerLink="/tabs/">
+        <ion-item routerLinkActive="active" routerLink="/tabs/"  *ngIf="user">
           <ion-icon name="notifications-outline" slot="start" style="color: white;"></ion-icon>
           <ion-label>Notifications</ion-label>
         </ion-item>
-        <ion-item routerLink="/tabs/" >
+        <ion-item  routerLinkActive="active" routerLink="/tabs/forum" *ngIf="user">
           <ion-icon name="chatbubbles-outline" slot="start" style="color: white;"></ion-icon>
           <ion-label>Forum</ion-label>
         </ion-item>
-        <ion-item routerLink="/" class="mt-4 bottom-fixed" style="border-top: 1px solid black;">
+        <ion-item routerLink="/" class="mt-4 bottom-fixed" style="border-top: 1px solid black;"  *ngIf="user " >
           <ion-icon name="log-out-outline" slot="start" style="color: white;"></ion-icon>
           <ion-label (click)="deconnexion()">Déconnexion</ion-label>
         </ion-item>
