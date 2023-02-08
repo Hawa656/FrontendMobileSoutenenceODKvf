@@ -98,17 +98,17 @@
       class="form-control"
       name="email"
       [(ngModel)]="form.email"
-      required
+      
       email
       #email="ngModel"
       [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
       >
-      <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+      <!-- <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
         <div *ngIf="email.errors['required']">Email obligatoire</div>
         <div *ngIf="email.errors['email']">
          Votre email doit être un email valide
         </div>
-      </div>
+      </div> -->
 
       <label for="password" class="form-label mb-0">Mot de passe</label>
       <input class="form-control mb-2" id="exampleInputpw" 
@@ -129,7 +129,7 @@
       </div>
 
       <label for="confirmPassword" class="form-label mb-0">Confirmer mot de passe</label>
-      <input  class="form-control mb-3" id="exampleInputEmail1" aria-describedby="emailHelp"
+      <input  class="form-control mb-3" id="exampleInputconfirmPw" aria-describedby="emailHelp"
       placeholder="Confirmer votre Mot de passe"
       type="password"
      
@@ -152,7 +152,7 @@
       <input type="submit" class="form-control button " value="Créer un compte" style="background: #FBC201; color: white;" />
       
       <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-        Signup failed!<br />{{ errorMessage }}
+        connection non reussie<br />{{ errorMessage }}
       </div>
      </form>
      <div class="alert alert-success" *ngIf="isSuccessful">

@@ -62,6 +62,10 @@ const routes: Routes = [
   {
     path: 'forum',
     loadChildren: () => import('./forum/forum.module').then( m => m.ForumPageModule)
+  },
+  {
+    path: 'splash-screenn',
+    loadChildren: () => import('./splash-screenn/splash-screenn.module').then( m => m.SplashScreennPageModule)
   }
 ];
 @NgModule({

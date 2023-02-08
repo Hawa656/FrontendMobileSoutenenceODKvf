@@ -33,13 +33,13 @@ export class InscriptionPage implements OnInit {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         
-
+        //==========1 FONCTION POUR PRENDRE UN PEU DE TEMPS AVANT D'ÊTRE REDIRIGER
         this.sleep(2000).then(() => {     
           // Call function after the sleep()
           console.log('Sleep function is working!') 
           this.route.navigate(['/connexion1'])}
           )
-        
+        //=========================================================
         
       },
       error: err => {
@@ -48,9 +48,10 @@ export class InscriptionPage implements OnInit {
       }
     });
   }
+  // FONCTION POUR PRENDRE UN PEU DE TEMPS AVANT D'ÊTRE REDIRIGER
   sleep(duration:any) {   
     return new Promise((resolve) => setTimeout(resolve, duration)); 
   }   
-   
+   //================================
     
 }
