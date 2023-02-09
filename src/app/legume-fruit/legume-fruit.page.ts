@@ -25,7 +25,7 @@ export class LegumeFruitPage implements OnInit {
     // console.log(this.Legume)
     this.Legume = data;
 
-    console.log(this.Legume)
+    console.log(" FFF "+this.Legume.photo)
    })
 
    //RECUPERER Autre methode

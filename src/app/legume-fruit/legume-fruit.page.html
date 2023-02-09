@@ -23,7 +23,7 @@
 
   <div class="container containerImg ">
     <div class=" row text">
-      <img class="imFruit mt-2" src="{{Legume.photo}}">
+      <img class="imFruit mt-2" src="{{Legume.photo}}" alt="{{Legume.photo}}">
     </div>
   </div>
   
@@ -70,11 +70,13 @@
   <div *ngIf="valueSelected == 'Tutoriel'">
    <div  class="container-fluid  mt-2">
       <div class="row mt-4 px-2">
-        
+        <!-- ==============elle permet de garder l'espace qu'on saisi tectus lors de l'ecriture mm 
+          <pre></pre> ================-->
         <h3 class="title fw-bolder">{{Legume.tutoriels.titre}}</h3>
         <p class="textP">
           {{Legume.tutoriels.description}}
         </p>
+     
         <div class="fw-bolder list">
           <ul>
             <li>Semis : {{Legume.tutoriels.semis}}</li>
@@ -88,7 +90,7 @@
       
       <div class="container ">
         <div class="row">
-         <video  controls src="http://127.0.0.1/imageSoutenance/{{Legume1.video}}" class="video"></video>
+         <video  controls src="http://127.0.0.1/videoSoutenance/{{Legume1.video}}" class="video"></video>
          <h4 class="textImg mx-3">{{Legume1.titre}</h4>
         </div>
        </div>
