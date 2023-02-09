@@ -1,5 +1,7 @@
 {
   "name": "FrontendMobile",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

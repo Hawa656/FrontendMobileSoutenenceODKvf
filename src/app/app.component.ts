@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 // import { StorageService } from './storage.service';
 import { StorageService } from './_services/storage.service';
 import { AuthService } from './_services/auth.service';
+import { Platform } from '@ionic/angular';
 
 
 @Component({
@@ -19,8 +20,17 @@ export class AppComponent implements OnInit{
   roles: string[] = [];
   //==============ngIF cacher profil===============
   user: any;
-  constructor(private router:Router,private userService:StorageService,private authService: AuthService,private routeDeconnexion : Router) {
+  constructor(private platform: Platform,private router:Router,private userService:StorageService,private authService: AuthService,private routeDeconnexion : Router) {
+  
+    this.initializeApp();
   }
+
+  initializeAp() {
+    this.platform.ready().then(() => {
+      (window as any).navigator.splashscreen.hide();
+    });
+  }
+
   ngOnInit(): void {
 
     this.user = this.userService.isLoggedIn();
