@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title color="light" class="text-center">{{Legume.nom}}</ion-title>
+    <ion-title color="light" class="text-center mt-1">{{Legume.nom}}</ion-title>
      
     <ion-button class="button">
       <ion-icon name="arrow-back-outline"></ion-icon>
@@ -44,7 +44,7 @@
 </div>
 <!-- =====================Contenu Description ===================== -->
   <div *ngIf="valueSelected == 'Description'">
-    <div class="container-fluid contenu mt-2">
+    <div class="container-fluid contenu mt-2 mb-4">
       
       <div class="row mt-4 px-2">
         <h2 class="mt-4 text-white" >Description</h2>
@@ -72,15 +72,23 @@
       <div class="row mt-4 px-2">
         <!-- ==============elle permet de garder l'espace qu'on saisi tectus lors de l'ecriture mm 
           <pre></pre> ================-->
-        <h3 class="title fw-bolder">{{Legume.tutoriels.titre}}</h3>
-        <p class="textP">
-          {{Legume.tutoriels.description}}
+         <h3 class="title fw-bolder">{{Legume.tutoriels.titre}}</h3>
+        <p class="textP mb-4">
+          {{Legume.tutoriels.etape1}}
+        </p>
+
+        <p class="textP mb-4">
+          {{Legume.tutoriels.etape2}}
+        </p>
+
+        <p class="textP mb-4">
+          {{Legume.tutoriels.etape3}}
         </p>
      
         <div class="fw-bolder list">
           <ul>
-            <li>Semis : {{Legume.tutoriels.semis}}</li>
-            <li>Bouture : {{Legume.tutoriels.bouture}}</li>
+            <!-- <li>Semis : {{Legume.tutoriels.semis}}</li>
+            <li>Bouture : {{Legume.tutoriels.bouture}}</li> -->
             <li>Etat de la terre : {{Legume.tutoriels.etatDeLaTerre}}</li>
             <li>Floraison : {{Legume.dureeFloraisaon}}</li>
             <li>Periode normale : {{Legume.periodeNormal}}</li>
@@ -94,8 +102,19 @@
          <h4 class="textImg mx-3">{{Legume1.titre}</h4>
         </div>
        </div>
-   </div>
+   </div> 
+    
+
+
+
+
+
+
    
+
+   <!-- =======================ION SLIDE======================================== -->
+
+
   </div>
   </div>
 

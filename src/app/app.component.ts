@@ -64,6 +64,9 @@ export class AppComponent implements OnInit{
   initializeApp(){
   this.router.navigateByUrl("connexion1")
 }
+// initializeApp(){
+//   this.router.navigateByUrl("test")
+// }
 
 
   

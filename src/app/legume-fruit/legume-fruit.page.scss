@@ -79,3 +79,16 @@ ion-label {
   video{
     margin-bottom: 60px;
   }
+  
+  // ================SCROLL-BAR========================
+ion-content {
+    --offset-bottom:auto !important;
+    --overflow: hidden;
+    background-color: #fff;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+// ================SCROLL-BAR========================
