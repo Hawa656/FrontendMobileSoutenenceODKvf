@@ -68,7 +68,7 @@ const routes: Routes = [
     loadChildren: () => import('./splash-screenn/splash-screenn.module').then( m => m.SplashScreennPageModule)
   },
   {
-    path: 'test',
+    path: 'test/:id',
     loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
   }
 ];

@@ -1,23 +1,21 @@
 
-// h1{
-//     position: relative;
-//     top: 20%;
-//     font-size: 30px;
-//     font-weight: bolder;
-//     color: black;
-//     margin: 0;
-//     padding: 0;   
-// }
-// .containerImg{
-//     margin: 0;
-//     padding: 0;
-    
-// }
+
 .imFruit{
     border-radius: 18px;
 }
 .contenu{
     background: rgba(50, 137, 35, 0.62);
+    border-radius: 34px 40px 0px 7px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50vh;
+
+}
+.contenu1{
+    //  background: #E8F2F0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url(../../assets/Soutenance/523.png);
+    
     border-radius: 34px 40px 0px 7px;
     margin: 0;
     padding: 0;
@@ -47,6 +45,7 @@ p{
 }
 .video{
     border-radius: 15px;
+    margin: 2px auto;
     
 }
 ion-toolbar{
@@ -91,4 +90,14 @@ ion-content {
         display: none;
     }
 }
+// .btn{
+//     font-size: 12px;
+//     border-radius: 15px;
+//     //  height: 35px;
+//     //  margin: 12px auto;
+//     //  width: 100%;
+//      color: #fff;
+//    //  width: 200px;
+//     background-color: #FFC700;
+// }
 // ================SCROLL-BAR========================

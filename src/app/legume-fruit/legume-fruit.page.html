@@ -68,11 +68,11 @@
   </div>
 <!-- =====================Contenu Tutoriel ===================== -->
   <div *ngIf="valueSelected == 'Tutoriel'">
-   <div  class="container-fluid  mt-2">
-      <div class="row mt-4 px-2">
+   <!-- <div  class="container-fluid  mt-2">
+      <div class="row mt-4 px-2"> -->
         <!-- ==============elle permet de garder l'espace qu'on saisi tectus lors de l'ecriture mm 
           <pre></pre> ================-->
-         <h3 class="title fw-bolder">{{Legume.tutoriels.titre}}</h3>
+         <!-- <h3 class="title fw-bolder">{{Legume.tutoriels.titre}}</h3>
         <p class="textP mb-4">
           {{Legume.tutoriels.etape1}}
         </p>
@@ -86,10 +86,10 @@
         </p>
      
         <div class="fw-bolder list">
-          <ul>
+          <ul> -->
             <!-- <li>Semis : {{Legume.tutoriels.semis}}</li>
             <li>Bouture : {{Legume.tutoriels.bouture}}</li> -->
-            <li>Etat de la terre : {{Legume.tutoriels.etatDeLaTerre}}</li>
+            <!-- <li>Etat de la terre : {{Legume.tutoriels.etatDeLaTerre}}</li>
             <li>Floraison : {{Legume.dureeFloraisaon}}</li>
             <li>Periode normale : {{Legume.periodeNormal}}</li>
           </ul>
@@ -102,13 +102,29 @@
          <h4 class="textImg mx-3">{{Legume1.titre}</h4>
         </div>
        </div>
-   </div> 
+   </div>  -->
     
 
 
+   <div class="container-fluid  contenu1 mt-2 mb-4">
+      
+    <div class="row  m-0  pt-4" style="display: flex;
+    justify-content: center;
+    align-items: center;">
+      <ion-button (click)="goToDetailLegume(Legume.id)"  class="m-0" style="background: #328923;width: 60%; border-radius: 14px; color: white; margin-right: 10px ;">Commencer le tuto</ion-button>
+    </div>
 
+    <div>
+      <div class="row  m-0 mt-4">
+        <video  controls src="http://127.0.0.1/videoSoutenance/{{Legume1.video}}" class="video "></video>
+        <h4 class="textImg ">{{Legume1.titre}</h4>
+       </div>
+    </div>
+  </div>
 
-
+  
+   
+   
 
    
 

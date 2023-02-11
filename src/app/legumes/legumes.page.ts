@@ -13,7 +13,7 @@ export class LegumesPage implements OnInit {
   constructor(private legumeFruitService: LegumeFruitService, private route : Router) { }
 
   ngOnInit() {
-     //AFFICHER LES LEGUMES ET FRUITS
+     //AFFICHER LES LEGUMES 
      this.legumeFruitService.getLegume().subscribe(data=>{
       this.legume = data;
       console.log(this.legume)

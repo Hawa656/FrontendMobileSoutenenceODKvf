@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LegumeFruitService } from '../_services/legume-fruit.service';
 import { VideosService } from '../_services/videos.service';
+// import { LegumesPage } from '../legumes/legumes.page';
 
 @Component({
   selector: 'app-legume-fruit',
@@ -16,7 +17,7 @@ export class LegumeFruitPage implements OnInit {
   idLegumesFruits:any
   id: any
   video: any;
-  constructor(private route : ActivatedRoute, private legumeFruitService : LegumeFruitService,private videoService: VideosService) { }
+  constructor(private route : ActivatedRoute, private legumeFruitService : LegumeFruitService,private videoService: VideosService,private route1 : Router) { }
 
   ngOnInit() {
    //RECUPERER L'ID DU LEGUME
@@ -40,5 +41,11 @@ export class LegumeFruitPage implements OnInit {
   segmentChanged(event:any){
     this.valueSelected = event.target.value;
   }
+
+   //LA METHODE PERMETTANT DE NAVIGER VERS LA PAGE DU DETAILS LEGUME
+   goToDetailLegume(id:number){
+     return this.route1.navigate(['/test',id])
+   }
+
 
 }
