@@ -12,13 +12,18 @@ export class VideosPage implements OnInit {
   AOUA:any;
   textFiltree:any
   selectedOption: any;
+  // pour la barre de recherche:
+  searchText:any;
+  videoo: any;
+  videoer: any;
   constructor(private videoService : VideosService) { }
 
   ngOnInit() {
          //AFFICHER LES VIDEOS
          this.videoService.getVideo().subscribe(data=>{
-          this.video = data;
-          console.log(this.video)
+          this.videoer = data;
+          // this.videoo = this.video.video;
+          console.log("hgyuiijuvytftghibhyvtfyujniyyi",this.video)
         })
 // ==========================FILTRAGE==============================
         //FILTRER LES VIDEOS PAR FRUITS OU LEGUMES

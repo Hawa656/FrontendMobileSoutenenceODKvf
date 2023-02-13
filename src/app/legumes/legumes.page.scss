@@ -2,7 +2,7 @@
     width: 100%;
     height: 120px;
     margin: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url(../../assets/Soutenance/fruit2.png);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url(../../assets/Soutenance/legumes.png);
     border-radius: 12px;
     background-size: cover;
 }
@@ -65,11 +65,15 @@ ion-card{
 .card{
     overflow-y: scroll;
     scrollbar-width: none !important;
-    height: 50%;
+    height: 60%;
     overflow-x: hidden;
     border: none;
     
 }
 .card::-webkit-scrollbar{
     display: none;
+}
+.img2{
+    height: 100px;
+    width: 100%;
 }

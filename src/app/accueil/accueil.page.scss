@@ -13,6 +13,12 @@ ion-content {
         display: none;
     }
 }
+
+.toolbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 // ================SCROLL-BAR========================
 
 .map {

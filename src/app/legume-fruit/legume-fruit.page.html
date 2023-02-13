@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title color="light" class="text-center mt-1">{{Legume.nom}}</ion-title>
+    <ion-title *ngIf="Legume && Legume.nom" color="light" class="text-center mt-1">{{Legume.nom}}</ion-title>
      
-    <ion-button class="button">
-      <ion-icon name="arrow-back-outline"></ion-icon>
-    </ion-button>
+    <!-- <ion-button class="button"> -->
+      <ion-icon class="button" (click)="back()" name="arrow-back-outline"></ion-icon>
+    <!-- </ion-button> -->
     
    
   </ion-toolbar>
@@ -23,7 +23,7 @@
 
   <div class="container containerImg ">
     <div class=" row text">
-      <img class="imFruit mt-2" src="{{Legume.photo}}" alt="{{Legume.photo}}">
+      <img *ngIf="Legume && Legume.photo" class="imFruit mt-2" src="{{Legume.photo}}" alt="{{Legume.photo}}">
     </div>
   </div>
   
@@ -51,17 +51,17 @@
         <div class="col-6 ">
          <div class="rectangle1">
           <h5 class="text-center">Récolte</h5>
-          <p class="text-center">{{Legume.dureeFloraisaon}}</p>
+          <p *ngIf="Legume && Legume.dureeFloraisaon" class="text-center">{{Legume.dureeFloraisaon}}</p>
          </div>
         </div>
         
         <div class="col-6 ">
           <div class="rectangle1 ">
            <h6 class="text-center">Espacement</h6>
-           <p class="text-center">{{Legume.tutoriels.espacementEntreGraine}}</p>
+           <p *ngIf="Legume && Legume.tutoriels.espacementEntreGraine" class="text-center">{{Legume.tutoriels.espacementEntreGraine}}</p>
           </div>
          </div>
-         <p class="text">{{Legume.description}}</p>
+         <p class="text " *ngIf="Legume && Legume.description">{{Legume.description}}</p>
       </div>
     </div>
    
@@ -111,13 +111,13 @@
     <div class="row  m-0  pt-4" style="display: flex;
     justify-content: center;
     align-items: center;">
-      <ion-button (click)="goToDetailLegume(Legume.id)"  class="m-0" style="background: #328923;width: 60%; border-radius: 14px; color: white; margin-right: 10px ;">Commencer le tuto</ion-button>
+      <ion-button (click)="goToDetailLegume(Legume.id)"  class="m-0" style="background: #328923;width: 60%; border-radius: 14px; color: white; margin-right: 10px ;">Commencer </ion-button>
     </div>
 
     <div>
       <div class="row  m-0 mt-4">
-        <video  controls src="http://127.0.0.1/videoSoutenance/{{Legume1.video}}" class="video "></video>
-        <h4 class="textImg ">{{Legume1.titre}</h4>
+        <video *ngIf="Legume1 && Legume1.video"  controls src="http://127.0.0.1/videoSoutenance/{{Legume1.video}}" class="video "></video>
+        <h4 *ngIf="Legume1 && Legume1.titre"class="textImg ">{{Legume1.titre}}</h4>
        </div>
     </div>
   </div>

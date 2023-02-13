@@ -13,7 +13,8 @@ export class LegumeFruitPage implements OnInit {
   valueSelected:any='Description'
   Legume1:any
   Legume : any
-  // Fruit : any
+  // pour la barre de recherche
+  searchText:any;
   idLegumesFruits:any
   id: any
   video: any;
@@ -26,14 +27,14 @@ export class LegumeFruitPage implements OnInit {
     // console.log(this.Legume)
     this.Legume = data;
 
-    console.log(" FFF "+this.Legume.photo)
+    // console.log(" FFF "+this.Legume.photo)
    })
 
-   //RECUPERER Autre methode
+   //RECUPERER Autre methode recuperation viddeo
    this.idLegumesFruits= this.route.snapshot.params["idLegumesFruits"]
    this.legumeFruitService.getTousLesInfoSurUnLegumeFruit(this.id).subscribe(data=>{
     this.Legume1 = data;
-    this.video = data.video;
+    //this.video = data.video;
     console.log(this.Legume1)
    })
   }
@@ -47,5 +48,9 @@ export class LegumeFruitPage implements OnInit {
      return this.route1.navigate(['/test',id])
    }
 
+   //METHODE PERMETTANT DE REVENIR A LA PAGE PRECEDENTE
+  back(): void {
+    window.history.back()
+  }
 
 }

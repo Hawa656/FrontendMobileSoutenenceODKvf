@@ -10,6 +10,8 @@ import { LegumeFruitService } from '../_services/legume-fruit.service';
 export class LegumesPage implements OnInit {
 
   legume : any
+  // pour la barre de recherche:
+  searchText:any;
   constructor(private legumeFruitService: LegumeFruitService, private route : Router) { }
 
   ngOnInit() {

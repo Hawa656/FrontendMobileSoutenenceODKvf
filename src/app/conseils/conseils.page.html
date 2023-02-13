@@ -12,10 +12,13 @@
         les mauvaises surprises dans vos jardins. </p>
     </div>
   </div>
+  <div class="container mt-3 ">
+    <ion-searchbar [(ngModel)]="searchText"></ion-searchbar>
+  </div>
   <!-- =============Listes des conseils=============== -->
   
     <div class="mb-3">
-       <ion-row class="row princ " *ngFor="let Conseil of conseil">
+       <ion-row class="row princ " *ngFor="let Conseil of conseil| filter:searchText">
       <ion-col size="5" class="img2">
         <img src="{{Conseil.photo}}" alt="image de conseil" width="180px" height="60px" style="padding: 0;" class="mt-4 image">
       </ion-col>

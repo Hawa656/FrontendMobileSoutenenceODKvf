@@ -9,6 +9,8 @@ import { LegumeFruitService } from '../_services/legume-fruit.service';
 })
 export class FruitsPage implements OnInit {
   fruit: any
+  // pour la barre de recherche:
+  searchText:any;
 
   constructor(private legumeFruitService: LegumeFruitService, private route: Router) { }
 

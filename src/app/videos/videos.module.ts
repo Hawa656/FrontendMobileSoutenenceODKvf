@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { VideosPageRoutingModule } from './videos-routing.module';
 
 import { VideosPage } from './videos.page';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VideosPageRoutingModule
+    VideosPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [VideosPage]
 })

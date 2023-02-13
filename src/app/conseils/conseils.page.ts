@@ -9,6 +9,8 @@ import { ConseilsService } from '../_services/conseils.service';
 })
 export class ConseilsPage implements OnInit {
  conseil: any
+ // pour la barre de recherche:
+ searchText:any;
   constructor(private conseilService: ConseilsService, private route : Router) { }
 
   ngOnInit() {

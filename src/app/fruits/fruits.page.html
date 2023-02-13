@@ -14,11 +14,11 @@
   </div>
  </div>
   
-  <div class="filtreSearchBar row ">
-    <div class="col-3">
+  <div class="filtreSearchBar container ">
+    <!-- <div class="col-3">
       <div class="filtre ">
         <ion-icon class="icon1 " name="filter-outline" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></ion-icon>
-        <!-- <ion-icon class="icon2" name="chevron-down-outline"></ion-icon> -->
+        
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -29,10 +29,10 @@
        
 
       </div>
-    </div>
-    <div class="col-9 searchbar">
-      <ion-searchbar></ion-searchbar>
-    </div>
+    </div> -->
+    <!-- <div class=" searchbar"> -->
+      <ion-searchbar [(ngModel)]="searchText"></ion-searchbar>
+    <!-- </div> -->
   </div>
 
 
@@ -42,7 +42,7 @@
     <!-- ===============CARD==================== -->
 
   <ion-row class="mt-2" >
-    <ion-col size="6" *ngFor="let Fruit of fruit">
+    <ion-col size="6" *ngFor="let Fruit of fruit | filter:searchText">
       <a (click)="goToDetailFruit(Fruit.id)">
       <ion-card>
         <img src="{{Fruit.photo}}" alt="image de fruit" class="img2">
