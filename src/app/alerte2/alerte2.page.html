@@ -1,36 +1,59 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Alerte2</ion-title>
+    <ion-icon class="button mx-4 " (click)="back()" name="arrow-back-outline" style=" display: flex;
+      
+      align-items: center;
+      justify-content: center;color: black;"></ion-icon>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <h3 class="title">Créer une nouvelle alerte</h3>
   <div class="container-fluid contenu">
-    <p class="pt-4">Preciser la date et l’heure</p>
+    <!-- <p class="pt-4">Preciser la date et l’heure</p> -->
     <!-- ===========CALENDAR============= -->
-    <div class="container mb-3 calend" >
+    <!-- <div class="container mb-3 calend" >
       <ion-datetime color="rose"></ion-datetime>
-    </div>
+    </div> -->
     <div class="container">
       <p>Titre</p>
       <!-- ===========INPUT============= -->
       <div class="row mb-4">
+       <form action=""
+       *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+          novalidate
+       >
         <ion-item>
-          <ion-input type="text"  name="title"></ion-input>
+          <ion-input type="text"  name="title"
+          [(ngModel)]="form.titre" required #titre="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && titre.errors }"
+          ></ion-input>
         </ion-item>
+
+        <div class="col-6 mt-4">
+          <ion-button>Enregistrer</ion-button>
+        </div>
+        <div class="alert alert-warning" *ngIf="f.submitted && isSuccessful">
+          Tâche non Planifier!
+        </div>
+
+       </form>
+       <div class="alert alert-success" *ngIf="isSignUpFailed">
+        Tâche planifiée avec succès!<br />{{ errorMessage }}
+      </div>
       </div>
     </div>
     <div class="container mb-4">
      <div class="row">
       <!-- ===========TOGGLE============= -->
       <div class="col-6 ">
-        <p>Alarm</p>
-        <ion-toggle style="--color: red;" [checked]="true"></ion-toggle>
+        <!-- <p>Alarm</p>
+        <ion-toggle  [checked]="true"></ion-toggle> -->
       </div>
-      <div class="col-6 mt-4">
+      <!-- <div class="col-6 mt-4">
         <ion-button>Enregistrer</ion-button>
-      </div>
+      </div> -->
      </div>
     </div>
     

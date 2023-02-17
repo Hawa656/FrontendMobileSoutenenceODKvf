@@ -45,4 +45,8 @@ export class TestPage implements OnInit {
      console.log(this.Legume1)
     })
    }
+    //METHODE PERMETTANT DE REVENIR A LA PAGE PRECEDENTE
+  back(): void {
+    window.history.back()
+  }
 }

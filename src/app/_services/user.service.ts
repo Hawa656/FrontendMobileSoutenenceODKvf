@@ -13,6 +13,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class UserService {
+  api= "http://localhost:8080/api/tache";
 
   constructor(private http: HttpClient) { }
 
@@ -29,5 +30,17 @@ export class UserService {
     },
       httpOptions
     );
+  }
+
+  // AJOUTER UNE TACHE
+  PostTache(titre: any,date:any,nbreJour:any, id:any):Observable<any> {
+    let data = new FormData();
+    data.append("titre",titre);
+    data.append("date",date);
+    data.append("nbreJour",nbreJour);
+    console.log(id)
+    return this.http.post<any>( 
+      this.api + '/ajouttache/'+ `${id}`,data
+      )
   }
 }

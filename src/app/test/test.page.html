@@ -3,6 +3,9 @@
   <ion-slides pager="true">
     <ion-slide>
       <div class="slide">
+        <!-- <ion-icon class="button mx-4 text-end mt-4" (click)="back()" name="arrow-back-outline" style=" 
+      color: black;"></ion-icon> -->
+      <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
         <img src="../../assets/Soutenance/illustrations/Environment-rafiki.png" />
       </div>  
         <div class="mt-4">
@@ -16,6 +19,8 @@
 
     <ion-slide>
       <div class="parent">
+        <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
+      
         <div class="child1">
           <img src="../../assets/Soutenance/illustrations/Environment-amico.png" />
         </div>
@@ -29,6 +34,8 @@
     </ion-slide>
 
     <ion-slide>
+      <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
+      
       <img src="../../assets/Soutenance/illustrations/Stay Positive-rafiki.png" />
       <h2 class=" fw-bolder mt-0 ">ETAPE 3</h2>
       <div class="contenu1 ">
@@ -39,6 +46,8 @@
 
     <ion-slide>
       <div class="slide">
+        <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
+      
         <img src="../../assets/Soutenance/illustrations/Environment-rafiki.png" />
       </div>  
         <h2 class="mb-4 mt-4 fw-bolder">ETAPE 4</h2>
@@ -49,11 +58,11 @@
     </ion-slide>
 
 
-    <ion-slide>
+    <!-- <ion-slide>
       <img src="./slide-4.png" />
       <h2>Ready to Play?</h2>
       <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
-    </ion-slide>
+    </ion-slide> -->
   </ion-slides>
  </div>
 </ion-content>

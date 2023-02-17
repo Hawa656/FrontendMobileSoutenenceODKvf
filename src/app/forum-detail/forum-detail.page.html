@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon class="button mx-4" (click)="back()" name="arrow-back-outline" style=" display: flex;
+      
+      align-items: center;
+      justify-content: center;color: white;"></ion-icon>
+    <ion-title>forumDetail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+
+  <div class="container">
+    <div class="row contourTout align-items-center justify-content-center ms-2 me-2" *ngFor="let Reponse of reponse">
+      <div class="col-3">
+        <div class="cercle">
+          <span class="noninitial text-uppercase">{{ Reponse.user.prenom.charAt(0) }}{{
+            Reponse.user.nom.charAt(0)}}</span>
+        </div>
+      </div>
+
+      <div class="col-9">
+        <div>
+          <p class="nomComplet">{{Reponse.user.nom}} {{Reponse.user.prenom}}</p>
+          <div class="d-flex mb-1 align-items-center">
+            <p class="dateP">{{ getFormattedDate(Reponse.timestamp) }} </p>
+            <p class="heureP">{{ getFormattedTime(Reponse.timestamp) }}</p>
+          </div>
+
+          <p class="txtCommentaire">{{Reponse.reponse}}</p>
+
+          <!-- <div class="commentaires mb-2">
+            <div>
+              <ion-fab-button style="width: 25px !important; height: 25px !important;">
+                22
+              </ion-fab-button>
+            </div>
+            <div>
+              <span> Reponses</span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="container SectionQuestion ms-2 me-2">
+    <div class="row align-items-center justify-content-center me-2 pt-4">
+      <form action="">
+
+        <div class="row align-items-center">
+          <div class="col-9">
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1" class="fw-bold mb-1">Poser votre question</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="question ici..."></textarea>
+            </div>
+          </div>
+          <div class="col-3">
+            <ion-button>
+              <ion-icon name="navigate-circle-outline" class="fs-1">
+              </ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </form>
+    </div>
+   </div>
+  <!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ======================================================== -->
+
+  <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+    <ng-template>
+      <div class="forms">
+        <h2>Poser votre question ici </h2>
+
+        <div>rr</div>
+
+        <form name="contact-form">
+          <ion-item counter="true">
+            <ion-label position="floating">Question ou Thème</ion-label>
+            <ion-input type="text" maxlength="150" minlength="25" name="titretheme"></ion-input>
+          </ion-item>
+          <div class="align-center">
+            <button>Poster la question</button>
+          </div>
+        </form>
+
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+
+</ion-content>

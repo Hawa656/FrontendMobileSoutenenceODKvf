@@ -18,8 +18,7 @@ export class FruitsPage implements OnInit {
     //AFFICHER LES  FRUITS
     this.legumeFruitService.getFruit().subscribe(data=>{
       this.fruit = data;
-      console.log("  )))))))))))))))) " + this.fruit)
-      console.log("  )))))))))))))))) " + this.fruit.titre)
+      
     })
   }
 

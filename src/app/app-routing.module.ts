@@ -70,6 +70,10 @@ const routes: Routes = [
   {
     path: 'test/:id',
     loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
+  },
+  {
+    path: 'forum-detail',
+    loadChildren: () => import('./forum-detail/forum-detail.module').then( m => m.ForumDetailPageModule)
   }
 ];
 @NgModule({

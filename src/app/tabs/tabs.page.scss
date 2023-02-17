@@ -6,6 +6,11 @@ ion-tab-button{
     color: white;
 }
 
-// ion-tab-button:hover{
-// --color: #FBC201;
-// }
+.MenuAll ion-menu-toggle{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu{
+    font-size: 1.9rem
+}

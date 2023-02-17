@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LegumeFruitService } from '../_services/legume-fruit.service';
+import { StorageService } from '../_services/storage.service';
 import { VideosService } from '../_services/videos.service';
 
 @Component({
@@ -16,7 +18,7 @@ export class VideosPage implements OnInit {
   searchText:any;
   videoo: any;
   videoer: any;
-  constructor(private videoService : VideosService) { }
+  constructor(private videoService : VideosService,private storageService: StorageService, private legumeFruitService: LegumeFruitService) { }
 
   ngOnInit() {
          //AFFICHER LES VIDEOS

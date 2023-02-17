@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title color="light" class="text-center">{{Fruit.nom}}</ion-title>
+    <ion-title color="light" class="text-center"  *ngIf="Fruit && Fruit.nom">{{Fruit.nom}}</ion-title>
      
-    <ion-button class="button">
+    <ion-button class="button " (click)="back()">
       <ion-icon name="arrow-back-outline"></ion-icon>
     </ion-button>
     
@@ -14,7 +14,7 @@
 
   <div class="container containerImg ">
     <div class=" row text">
-      <img class="imFruit mt-2" src="{{Fruit.photo}}">
+      <img  *ngIf="Fruit && Fruit.photo" class="imFruit mt-2" src="{{Fruit.photo}}">
     </div>
   </div>
   
@@ -42,17 +42,17 @@
         <div class="col-6 ">
          <div class="rectangle1">
           <h5 class="text-center">Récolte</h5>
-          <p class="text-center">{{Fruit.dureeFloraisaon}}</p>
+          <p  *ngIf="Fruit && Fruit.dureeFloraisaon" class="text-center">{{Fruit.dureeFloraisaon}}</p>
          </div>
         </div>
         
         <div class="col-6 ">
           <div class="rectangle1 ">
            <h6 class="text-center">Espacement</h6>
-           <p class="text-center">{{Fruit.tutoriels.espacementEntreGraine}}</p>
+           <p  *ngIf="Fruit && Fruit.tutoriels.espacementEntreGraine" class="text-center">{{Fruit.tutoriels.espacementEntreGraine}}</p>
           </div>
          </div>
-         <p class="text">{{Fruit.description}}</p>
+         <p  *ngIf="Fruit && Fruit.description" class="text">{{Fruit.description}}</p>
       </div>
     </div>
    
@@ -62,9 +62,18 @@
    <div  class="container-fluid  mt-2">
       <div class="row mt-4 px-2">
         
-        <h3 class="title fw-bolder">{{Fruit.tutoriels.titre}}</h3>
-        <p class="textP">
-          {{Fruit.tutoriels.description}}
+        <h3  *ngIf="Fruit && Fruit.tutoriels.titre" class="title fw-bolder">{{Fruit.tutoriels.titre}}</h3>
+        <p class="textP mb-2"  *ngIf="Fruit && Fruit.tutoriels.etape1">
+          {{Fruit.tutoriels.etape1}}
+        </p>
+        <p class="textP mb-2"  *ngIf="Fruit && Fruit.tutoriels.etape2">
+          {{Fruit.tutoriels.etape2}}
+        </p>
+        <p class="textP mb-2"  *ngIf="Fruit && Fruit.tutoriels.etape3">
+          {{Fruit.tutoriels.etape3}}
+        </p>
+        <p class="textP mb-2"  *ngIf="Fruit && Fruit.tutoriels.etape4">
+          {{Fruit.tutoriels.etape4}}
         </p>
         <div class="fw-bolder list">
           <ul>
@@ -77,7 +86,7 @@
         </div>
       </div>
       
-      <div class="container ">
+      <div class="container mb-4">
         <div class="row">
          <video  controls src="../../assets/Soutenance/video2.mp4" class="video"></video>
          <h4 class="textImg mx-3">Culture du grenadier</h4>

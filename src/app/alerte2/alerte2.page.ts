@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../_services/storage.service';
+import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-alerte2',
@@ -7,9 +9,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Alerte2Page implements OnInit {
 
-  constructor() { }
+  User:any
+  id:any
+  form: any = {
+    titre: null,
+    date:null,
+    nbreJour:null
+    
+  };
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+
+  constructor( private serviceStorage : StorageService, private userService: UserService) { }
 
   ngOnInit() {
+    this.User = this.serviceStorage.getUser();
   }
 
+  onSubmit(): void {
+    const { titre,date,nbreJour} = this.form;
+    this.userService.PostTache(titre,date,nbreJour, this.User.id).subscribe({
+      next: data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+        
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    });
+  }
+
+  //METHODE PERMETTANT DE REVENIR A LA PAGE PRECEDENTE
+  back(): void {
+    window.history.back()
+  }
 }

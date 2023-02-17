@@ -36,8 +36,9 @@
          <div class="filtre ">
           <!-- <ion-icon class="icon1 " name="filter-outline" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></ion-icon>
            -->
-        <select class="form-selec form-selec-md larger" aria-label="filtrer" (change)="cangement()"   name="textFiltree"  [(ngModel)]="textFiltree">
-          <label for="" class="text-dark">Filtrer</label>
+        <select class="form-select" aria-label="Filtrer" (change)="cangement()"   name="textFiltree"  [(ngModel)]="textFiltree">
+          <label for="filtre" class="text-dark">Filtrer</label>
+          <option selected>Filtrer</option>
           <option >Fruit</option>
           <option>Legume</option>
         </select>

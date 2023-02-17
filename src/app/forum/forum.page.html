@@ -1,9 +1,177 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>forum</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="section1" style="margin-top: 24%;">
+    <ion-fab vertical="top" horizontal="end" slot="" id="open-custom-dialog" expand="block">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <div style="width: 75%; margin-top: 2%;">
+      <ion-searchbar slot="end" animated="true" placeholder="Recherche"></ion-searchbar>
+    </div>
+  </div> -->
+
+
+  <div class="d-flex mt-5">
+    <div style="width: 75%; margin-top: 2%;">
+      <ion-searchbar slot="end" animated="true" placeholder="Recherche"></ion-searchbar>
+    </div>
+
+    <div>
+      <ion-fab-button id="open-custom-dialog">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </div>
+  </div>
+
+  <div class="container" >
+    <div class="row contourTout align-items-center justify-content-center ms-2 me-2" *ngFor="let Question of question1.slice().reverse()">
+      <div class="col-3">
+        <div class="cercle">
+          <!-- charAt(0) PERMET DE PRENDRE L'INITIAL DU NOM -->
+          <span class="noninitial text-uppercase">{{ Question.user.prenom.charAt(0) }}{{ Question.user.nom.charAt(0)
+            }}</span>
+        </div>
+      </div>
+
+      <div class="col-9" [routerLink]="['/tabs/forum/forum-detail',Question.id]">
+        <div>
+          <p class="nomComplet">{{Question.user.prenom}} {{Question.user.nom}}</p>
+          <div class="d-flex mb-1 align-items-center">
+            <p class="dateP">{{ getFormattedDate(Question.timestamp) }} </p>
+            <p class="heureP">{{ getFormattedTime(Question.timestamp) }}</p>
+          </div>
+
+          <p class="txtCommentaire">{{Question.question}}</p>
+
+          <div class="commentaires mb-2">
+            <div>
+              <ion-fab-button style="width: 25px !important; height: 25px !important;">
+                22
+              </ion-fab-button>
+            </div>
+            <div>
+              <span> Reponses</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ================================================ SECTION FORUM QUESTIONS OR THEMES -->
+  <!-- <div class="sectionTheme"> -->
+  <!-- .slice().reverse()  Pour mettre a l'ordre decroissant -->
+  <!-- <div class="contenu" mlkjhg>
+      <div class="imgEtTheme">
+        <div class="images">
+          <ion-avatar>
+            <img src="../../assets/Soutenance/2.png" alt="" srcset="">
+          </ion-avatar>
+
+        <img src="../../../assets/img/noss.png" alt="" srcset=""> -->
+  <!-- </div>
+        <div class="titre">
+          <p>une suite de mots sans signification
+            utilisée à titre provisoire pour calibrer
+            une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il</p>
+          <span>Par: <strong>lovely girl</strong> le 22/09/3456</span>
+        </div>
+      </div>
+
+      <div class="commentaireEtVoirplus">
+        <div class="commentaires">
+          <div>
+            <ion-fab-button style="width: 25px !important; height: 25px !important;">
+              22
+            </ion-fab-button>
+          </div>
+          <div>
+            <span> Commentaire(s)</span>
+          </div>
+        </div>
+
+        <div class="voirplus">
+          *ngIf="themes.nbreCommentaire != 0" -->
+  <!-- <a>Voir plus</a> -->
+
+  <!-- [routerLink]="['/details-regions',regions.id_regions]" -->
+  <!-- </div>
+      </div> -->
+
+  <!-- 
+    </div> -->
+  <!-- </div>  -->
+
+  <!-- ======================================================== -->
+
+  <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+    <ng-template>
+      <div class="forms">
+        <h2>Vous avez une Question? posez la! </h2>
+
+        <div>rr</div>
+
+        <form name="contact-form" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+          novalidate>
+          <ion-item counter="true">
+            <ion-label position="floating">Question ou Thème</ion-label>
+            <ion-input type="text" name="question" [(ngModel)]="form.question" required #question="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && question.errors }"></ion-input>
+          </ion-item>
+          <div class="align-center">
+            <button>Poster la question</button>
+
+            <div class="alert alert-warning" *ngIf="f.submitted && isSuccessful">
+              question non Ajouter!
+            </div>
+
+          </div>
+        </form>
+        <div class="alert alert-success" *ngIf="isSignUpFailed">
+          question ajouter avec succès!<br />{{ errorMessage }}
+        </div>
+        <!-- (click)="ajouter()" -->
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
 
 </ion-content>

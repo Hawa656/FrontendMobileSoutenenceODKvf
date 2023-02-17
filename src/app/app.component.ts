@@ -20,6 +20,7 @@ export class AppComponent implements OnInit{
   roles: string[] = [];
   //==============ngIF cacher profil===============
   user: any;
+  user1:any
   constructor(private platform: Platform,private router:Router,private userService:StorageService,private authService: AuthService,private routeDeconnexion : Router) {
   
     this.initializeApp();
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
 
     this.user = this.userService.isLoggedIn();
+    this.user1 = this.userService.getUser();
 
     if (this.user == true) {
       this.router.navigateByUrl("/tabs/accueil")

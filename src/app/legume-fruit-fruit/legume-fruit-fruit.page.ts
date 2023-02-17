@@ -28,4 +28,9 @@ export class LegumeFruitFruitPage implements OnInit {
     this.valueSelected = event.target.value;
   }
 
+  //METHODE PERMETTANT DE REVENIR A LA PAGE PRECEDENTE
+  back(): void {
+    window.history.back()
+  }
+
 }

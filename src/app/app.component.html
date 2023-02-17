@@ -1,12 +1,14 @@
 <ion-app>
-  <ion-menu menuId="main-menu" contentId="main">
+  <!-- <ion-menu-toggle> c'est ce qui permet que lorsqu'on clic sur un lien du sidebar que le sidebar disparait -->
+  <ion-menu-toggle>
+      <ion-menu menuId="main-menu" contentId="main">
     <ion-content>
       <div class="menu-header-bg "></div>
       <!-- PHOTO PROFIL -->
       <div class="header-content">
         <img src="../assets/Soutenance/profil.jpeg" class=" float-right " alt="profil">
         <ion-label>
-          <h2 class="my-2">Hawa Coulibaly</h2>
+          <h2 class="my-2">{{user1.nom}} {{user1.prenom}}</h2>
         </ion-label>
       </div>
       <!-- ELEMENTS DU MENU -->
@@ -50,5 +52,7 @@
       </ion-list>
     </ion-content>
   </ion-menu>
+  </ion-menu-toggle>
+
   <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
