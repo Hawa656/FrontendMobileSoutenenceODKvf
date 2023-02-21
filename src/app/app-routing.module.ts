@@ -74,6 +74,14 @@ const routes: Routes = [
   {
     path: 'forum-detail',
     loadChildren: () => import('./forum-detail/forum-detail.module').then( m => m.ForumDetailPageModule)
+  },
+  {
+    path: 'otp',
+    loadChildren: () => import('./otp/otp.module').then( m => m.OtpPageModule)
+  },
+  {
+    path: 'forget-motde-passe',
+    loadChildren: () => import('./forget-motde-passe/forget-motde-passe.module').then( m => m.ForgetMotdePassePageModule)
   }
 ];
 @NgModule({

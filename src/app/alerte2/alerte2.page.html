@@ -20,28 +20,32 @@
       <p>Titre</p>
       <!-- ===========INPUT============= -->
       <div class="row mb-4">
-       <form action=""
-       *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
-          novalidate
-       >
-        <ion-item>
-          <ion-input type="text"  name="title"
+     
+
+        <form name="contact-form" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+  novalidate>
+  
+
+    <div class="row align-items-center">
+      <div class="col-9">
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1" class="fw-bold mb-1">Titre</label>
+          <input class="form-control" name="titre" id="exampleFormControlTextarea1" rows="3" placeholder="titre de votre tâche."
           [(ngModel)]="form.titre" required #titre="ngModel"
-              [ngClass]="{ 'is-invalid': f.submitted && titre.errors }"
-          ></ion-input>
-        </ion-item>
-
-        <div class="col-6 mt-4">
-          <ion-button>Enregistrer</ion-button>
+          [ngClass]="{ 'is-invalid': f.submitted && titre.errors }"
+          >
         </div>
-        <div class="alert alert-warning" *ngIf="f.submitted && isSuccessful">
-          Tâche non Planifier!
-        </div>
-
-       </form>
-       <div class="alert alert-success" *ngIf="isSignUpFailed">
-        Tâche planifiée avec succès!<br />{{ errorMessage }}
       </div>
+      <div class="col-3">
+        <ion-button type="submit">
+          <ion-icon name="navigate-circle-outline" class="fs-1">
+          </ion-icon>
+        </ion-button>
+  
+      </div>
+    </div>
+  </form>
+
       </div>
     </div>
     <div class="container mb-4">
@@ -58,5 +62,9 @@
     </div>
     
   </div>
+
+
+  
+
 
 </ion-content>

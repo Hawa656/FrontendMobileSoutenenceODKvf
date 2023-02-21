@@ -10,52 +10,60 @@ import { StorageService } from '../_services/storage.service';
 })
 export class ForumPage implements OnInit {
 
-  User:any
-  postreponse:any
-  reponse:any
-  idquestion:any
+  User: any
+  postreponse: any
+  reponse: any
+  idquestion: any
   form: any = {
     question: null,
-    reponse:null,
-    
+    reponse: null,
+
   };
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  id_question:any
-    question1: any
-    id: any;
+  id_question: any
+  question1: any
+  id: any;
   timestamp!: Date;
   user: any;
-    // pour la barre de recherche:
-    searchText:any;
-  constructor(private forumService: ForumService,private route: Router, private serviceStorqge : StorageService) { }
+  // pour la barre de recherche:
+  searchText: any;
+  constructor(private forumService: ForumService, private route: Router, private serviceStorqge: StorageService) { }
 
   ngOnInit() {
 
     // AFFICHAGE LISTE QUESTION
     this.User = this.serviceStorqge.getUser();
     console.log(this.User)
-    this.forumService.getQuestion().subscribe(data=>{
-      this.question1 = data;
-      console.log('question'+ this.question1)
-    })
+    this.lesReponses();
 
     // AFFICHAGE LISTE REPONSES
-    this.forumService.getReponsesParQuestion(this.id).subscribe(data=>{
-      this.reponse = data;})
-    
-   
+    this.forumService.getReponsesParQuestion(this.id).subscribe(data => {
+      this.reponse = data;
+    })
+
+  }
+
+
+
+
+  lesReponses(): void {
+    this.forumService.getQuestion().subscribe(data => {
+      this.question1 = data;
+      console.log('question' + this.question1)
+    })
   }
 
   onSubmit(): void {
-    const { question} = this.form;
+    const { question } = this.form;
+    this.lesReponses()
     this.forumService.PostQuestion(question, this.User.id).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        
+
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -65,7 +73,7 @@ export class ForumPage implements OnInit {
   }
 
 
-  
+
 
   // POUR RECUPERER LA DATE SEPAREMENT
   getFormattedDate(timestamp: number): string {
@@ -79,11 +87,11 @@ export class ForumPage implements OnInit {
     const minutes = date.getMinutes().toString().padStart(2, '0');
     return `${hours}:${minutes}`;
   }
-  
+
 
   //LA METHODE PERMETTANT DE NAVIGER VERS LA PAGE DU DETAILS FORUM
-  goToDetailForum(idQuestion:number){
+  goToDetailForum(idQuestion: number) {
     return this.route.navigate(['/forum-details', idQuestion])
   }
- 
+
 }

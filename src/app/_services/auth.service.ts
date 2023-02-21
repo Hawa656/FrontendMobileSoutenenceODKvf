@@ -29,9 +29,6 @@ export class AuthService {
   }
 // +++++++++++++++++CREATION DE COMPTE+++++++++++++++++++++++
   register(nom: string, prenom: string, numero: string, email: string, password: string, confirmPassword: string): Observable<any> {
-    // const pseudo = "hawaC";
-    // const username = "keita"
-    // alert(confirmPassword)
     return this.http.post(
       AUTH_API + 'signup',
       {
@@ -51,4 +48,31 @@ export class AuthService {
       const req = new HttpRequest('POST', AUTH_API + 'signout', {}, httpOptions);
       return this.http.request(req);
     }
+
+
+    // ++++++++++++++++MOT DE PASSE OUBLIER? REINITIALISER PASSWORD+++++++++++++++++++++++
+    resetPassword( email: string): Observable<any> {
+    return this.http.post(
+      AUTH_API + 'resetPassword/' + `${email}`,
+      {
+        "email":email,
+    },
+      httpOptions
+    );
+  }
+
+  // ++++++++++++++++CHANGER MOT DE PASSE  PASSWORD+++++++++++++++++++++++
+  changePassword(emailOrNumero: string, currentpassword: string, newpassword: string, confirmpassword: string): Observable<any> {
+    const data = {
+      emailOrNumero: emailOrNumero,
+      currentpassword: currentpassword,
+      newpassword: newpassword,
+      confirmpassword: confirmpassword
+    };
+    return this.http.post('http://localhost:8080/api/auth/changePassword', data);
+  }
+  
+
 }
+
+ 

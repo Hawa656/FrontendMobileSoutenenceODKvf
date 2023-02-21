@@ -1,0 +1,53 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>forgetMotdePasse</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content>
+  <ion-icon class="button mx-4 mt-4" (click)="back()" name="arrow-back-outline" style=" display: flex;
+      align-items: center;
+      justify-content: center;color: black; font-size: 25px;"></ion-icon>
+<div style="margin-top: 60px; margin-bottom: 30px;">
+  <h4 class="text-center  fs-3 fw-bold">Mot de passe oublier?</h4>
+
+</div>
+  <!-- <div class="conatiner"> -->
+    <div class="container " style="display: flex; justify-content: center; margin-bottom: 30px;">
+      <div style="width: 55%; ">
+        <img  class="imFruit mt-2 text-center" src="../../assets/Soutenance/forget.png" alt="forget password">
+      </div>  
+    </div>
+<div class="conatiner">
+    <div class="row">
+      <div>
+        <p class="text-center" style="font-size: 10px; color: black;">Entrez votre adresse email et nous vous enverrons un lien de réinitialisation de mot de passe.</p>
+  
+      </div>
+    </div>
+</div>
+ <div class="container">
+  <form action="" name="contact-form" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+  novalidate>
+   <div class="col-12">
+    <label for="">Email</label>
+    <input type="email" class="form-control mb-3"  name="email" [(ngModel)]="form.email" required #email="ngModel"
+    [ngClass]="{ 'is-invalid': f.submitted && email.errors }">
+   </div>
+    <div class="col-12">
+      <input type="submit" value="Envoyer" class="form-control" style="background: #FBC201; color: white; font-weight: bold; border: none;">
+      
+      <div class="alert alert-warning" *ngIf="f.submitted && isSuccessful">
+        mot de passe non renitialiser veuillez ressayer!
+      </div>
+    
+    </div>
+  </form>
+
+  <div class="alert alert-success" *ngIf="isSignUpFailed">
+    mot de passe renitialiser avec succès!<br />{{ errorMessage }}
+  </div>
+
+ </div>
+  <!-- </div> -->
+</ion-content>

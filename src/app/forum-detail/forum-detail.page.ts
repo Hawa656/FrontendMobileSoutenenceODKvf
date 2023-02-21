@@ -28,13 +28,7 @@ export class ForumDetailPage implements OnInit {
   ngOnInit() {
 
     this.User = this.storageService.getUser();
-   this.id= this.route.snapshot.params["id"]
-  
-  this.forumService.getReponsesParQuestion(this.id).subscribe(data=>{
-    this.reponse = data;
 
-    // console.log('fdghjkllllllllkj'+ this.reponse)
-  })
 }
 
 // POUR RECUPERER LA DATE SEPAREMENT
@@ -51,11 +45,16 @@ getFormattedTime(timestamp: number): string {
 }
 
 // AJOUTER REPONSE
-onSubmitR(): void {
+onSubmit(): void {
+  this.id= this.route.snapshot.params["id"]
+  this.lesReponsesPArQuestion();
   const { reponse} = this.form;
-  this.forumService.PostReponse(reponse, this.idquestion,this.User.id).subscribe({
+  // console.log('dfghjklmque reponse'+ reponse);
+  this.forumService.PostReponse(reponse, this.id,this.User.id).subscribe({
     next: data => {
+      this.lesReponsesPArQuestion();
       console.log(data);
+     
       this.isSuccessful = true;
       this.isSignUpFailed = false;
       
@@ -70,6 +69,16 @@ onSubmitR(): void {
     //METHODE PERMETTANT DE REVENIR A LA PAGE PRECEDENTE
     back(): void {
       window.history.back()
+    }
+
+    lesReponsesPArQuestion(){
+      this.id= this.route.snapshot.params["id"]
+  
+      this.forumService.getReponsesParQuestion(this.id).subscribe(data=>{
+        this.reponse = data;
+        
+        // console.log('fdghjkllllllllkj'+ this.reponse)
+      })
     }
 
 }

@@ -261,3 +261,22 @@
     top: 75vh;
     position: fixed;
   }
+
+  // ================SCROLL-BAR========================
+ion-content {
+    --offset-bottom:auto !important;
+    --overflow: hidden;
+    background-color: #fff;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.toolbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// ================SCROLL-BAR========================

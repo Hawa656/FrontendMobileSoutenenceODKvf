@@ -18,14 +18,14 @@
   <!-- =============Listes des conseils=============== -->
   
     <div class="mb-3">
-       <ion-row class="row princ " *ngFor="let Conseil of conseil| filter:searchText">
+       <ion-row class="row princ " *ngFor="let Conseil of conseil| filter:searchText" (click)="goToDetailConseils(Conseil.id)">
       <ion-col size="5" class="img2">
         <img src="{{Conseil.photo}}" alt="image de conseil" width="180px" height="60px" style="padding: 0;" class="mt-4 image">
       </ion-col>
       <ion-col size="7" class=" textLeft " >
         <h1 class="title2 mb-1">{{Conseil.titre}}</h1>
         <p class="p2 ">{{Conseil.description | slice:0:100}}</p>
-        <a (click)="goToDetailConseils(Conseil.id)" class="mt-0">voir plus</a> 
+        <a  class="mt-0">voir plus</a> 
       </ion-col>
     </ion-row>
     </div>

@@ -7,23 +7,24 @@ import { UserService } from '../_services/user.service';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page  implements OnInit{
-  form: any = {
-    nom: null,
-    prenom:null,
-    numero:null,
-    email: null,
-    // password: null,
-    // confirmPassword:null
-  };
+export class Tab3Page implements OnInit {
+  form: any;
 
-  User:any
+  User: any
 
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private userService: UserService, private storageService: StorageService) {}
+  constructor(private userService: UserService, private storageService: StorageService) {
+    this.User = this.storageService.getUser();
+    this.form = {
+      nom: this.User.nom,
+      prenom: this.User.prenom,
+      numero: this.User.numero,
+      email: this.User.email,
+    }
+  }
 
 
   ngOnInit() {
@@ -32,8 +33,8 @@ export class Tab3Page  implements OnInit{
   }
 
   onSubmit(): void {
-    const { nom,prenom,numero, email} = this.form;
-    this.userService.modifieruser(nom,prenom, numero, email, this.User.id).subscribe({
+    const { nom, prenom, numero, email } = this.form;
+    this.userService.modifieruser(nom, prenom, numero, email, this.User.id).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
@@ -47,5 +48,5 @@ export class Tab3Page  implements OnInit{
   }
 
 
- 
+
 }

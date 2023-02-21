@@ -1,0 +1,75 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>otp</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Email ou numéro</ion-label>
+    <ion-input type="text" [(ngModel)]="emailOrNumero"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Mot de passe actuel</ion-label>
+    <ion-input type="password" [(ngModel)]="currentpassword"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Nouveau mot de passe</ion-label>
+    <ion-input type="password" [(ngModel)]="newpassword"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Confirmer le nouveau mot de passe</ion-label>
+    <ion-input type="password" [(ngModel)]="confirmpassword"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="changePassword()">Changer le mot de passe</ion-button>
+  <ion-item *ngIf="message">
+    <ion-label>{{ message }}</ion-label>
+  </ion-item>
+
+
+
+
+
+
+  <!-- <ion-icon class="button mx-4 mt-4" (click)="back()" name="arrow-back-outline" style=" display: flex;
+      align-items: center;
+      justify-content: center;color: white; font-size: 25px;"></ion-icon>
+ <div class="container " >
+      <div class="row" >
+        <div   style="width: 60%; margin: 2% auto; margin-top: 50px;">
+          <img  class="imFruit mt-2 text-center" src="../../assets/Soutenance/otp.png" alt="forget password">
+        </div> 
+      </div> 
+      <div style="margin-top: 30px; margin-bottom: 30px;">
+        <h4 class="text-center text-white fs-3 fw-bold mb-3">Code de verification</h4>
+        <p class="text-white text-center" style="font-size: 11px;">Veuillez saisir le code que nous venons
+          de vous envoyer</p>
+      </div>
+    </div>
+
+   
+
+    <div class="container">
+      <form action="" name="contact-form">
+       <div class="row mb-3">
+        <div class="col-3">
+          <input type="text" class="form-control mb-3"  name="email" placeholder="*" >
+         </div>
+         <div class="col-3">
+          <input type="text" class="form-control mb-3"  name="email" placeholder="*">
+         </div>
+         <div class="col-3">
+          <input type="text" class="form-control mb-3"  name="email" placeholder="*">
+         </div>
+         <div class="col-3">
+          <input type="text" class="form-control mb-3"  name="email" placeholder="*">
+         </div>
+       </div>
+        <div class="col-12">
+          <input type="submit" value="Envoyer" class="form-control" style="background: #FBC201; color: white; font-weight: bold; border: none;">
+        </div>
+      </form>
+  
+     </div> -->
+</ion-content>

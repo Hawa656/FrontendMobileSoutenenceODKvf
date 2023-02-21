@@ -29,7 +29,9 @@ export class Alerte2Page implements OnInit {
 
   onSubmit(): void {
     const { titre,date,nbreJour} = this.form;
-    this.userService.PostTache(titre,date,nbreJour, this.User.id).subscribe({
+    console.log('titre'+titre)
+    console.log('date'+date)
+    this.userService.PostTache(this.form, this.User.id).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;

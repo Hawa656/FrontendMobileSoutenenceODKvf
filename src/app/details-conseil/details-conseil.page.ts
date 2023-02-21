@@ -10,6 +10,7 @@ import { ConseilsService } from '../_services/conseils.service';
 export class DetailsConseilPage implements OnInit {
   Conseil:any
   idConseil:any
+  searchText:any;
 
   constructor(private route : ActivatedRoute, private conseilService: ConseilsService,private route1 : Router) { }
 
@@ -20,6 +21,11 @@ export class DetailsConseilPage implements OnInit {
     this.Conseil = data;
 
   })
+}
+
+//METHODE PERMETTANT DE REVENIR A LA PAGE PRECEDENTE
+back(): void {
+  window.history.back()
 }
   
 }

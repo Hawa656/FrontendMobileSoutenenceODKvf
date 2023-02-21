@@ -27,15 +27,22 @@ export class ForumService {
       )
   }
 
-   // AJOUTER REPONSE
-   PostReponse(reponse: any,idquestion:any, idUser:any):Observable<any> {
-    let data = new FormData();
-    data.append("question",reponse);
-    console.log(idUser)
-    return this.http.post<any>( 
-      this.api + '/ajouter/'+ `${idquestion}`+`${idUser}`,data
-      )
-  }
+  //  // AJOUTER REPONSE
+  //  PostReponse(reponse: any,idquestion:any, idUser:any):Observable<any> {
+  //   let data = new FormData();
+  //   data.append("question",reponse);
+  //   console.log(idUser)
+  //   return this.http.post<any>( 
+  //     this.api1 + '/ajouter/'+ `${idquestion}`+`${idUser}`,data
+  //     )
+  // }
+
+  PostReponse(reponse: any,idquestion:any, idUser:any):Observable<any> {
+      let data = new FormData();
+      data.append("reponse",reponse);
+      // console.log(idUser)
+      return this.http.post(`http://localhost:8080/reponses/ajouter/${idquestion}/${idUser}`,data)
+    }
 
 
   //AFFICHAGE DES Questions
