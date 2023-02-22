@@ -18,7 +18,17 @@ export class LegumeFruitService {
   }
 
   //AFFICHAGE DES FRUITS
+  getEtapesParTuto(tutoriels:any):Observable<any>{
+    return this.http.get(`http://localhost:8080/api/etape/etapesParTuto/${tutoriels}`)
+  }
+
+  //AFFICHAGE DES FRUITS
   getFruit():Observable<any>{
+    return this.http.get(`http://localhost:8080/api/legumefruit/lireFruits`)
+  }
+
+  //AFFICHER TOUS LES ETAPES D4UN LEGUME FRUIT
+  getEtapeLegumeFruit():Observable<any>{
     return this.http.get(`${this.api}/lireFruits`)
   }
 

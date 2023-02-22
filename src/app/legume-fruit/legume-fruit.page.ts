@@ -13,6 +13,7 @@ export class LegumeFruitPage implements OnInit {
   valueSelected:any='Description'
   Legume1:any
   Legume : any
+  etape:any
   // pour la barre de recherche
   searchText:any;
   idLegumesFruits:any
@@ -32,7 +33,7 @@ export class LegumeFruitPage implements OnInit {
 
    //RECUPERER Autre methode recuperation viddeo
    this.idLegumesFruits= this.route.snapshot.params["idLegumesFruits"]
-   this.legumeFruitService.getTousLesInfoSurUnLegumeFruit(this.id).subscribe(data=>{
+   this.legumeFruitService.recupererIdLegumeFruit(this.id).subscribe(data=>{
     this.Legume1 = data;
     //this.video = data.video;
     console.log(this.Legume1)
@@ -42,7 +43,12 @@ export class LegumeFruitPage implements OnInit {
   segmentChanged(event:any){
     this.valueSelected = event.target.value;
   }
-
+  getEtapeTutoLegumeFruit(){
+    this.legumeFruitService.getEtapeLegumeFruit().subscribe(data=>{
+      this.etape = data;
+      console.log(this.Legume1)
+     })
+  }
    //LA METHODE PERMETTANT DE NAVIGER VERS LA PAGE DU DETAILS LEGUME
    goToDetailLegume(id:number){
      return this.route1.navigate(['/test',id])

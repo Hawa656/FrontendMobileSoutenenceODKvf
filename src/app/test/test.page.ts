@@ -18,6 +18,8 @@ export class TestPage implements OnInit {
   etape2: any;
   etape3: any;
   etape4: any;
+  
+  etape:any
 
   constructor(private route : ActivatedRoute,private legumeFruitService : LegumeFruitService) { }
 
@@ -39,12 +41,19 @@ export class TestPage implements OnInit {
  
     //RECUPERER Autre methode
     this.idLegumesFruits= this.route.snapshot.params["idLegumesFruits"]
-    this.legumeFruitService.getTousLesInfoSurUnLegumeFruit(this.id).subscribe(data=>{
+    this.legumeFruitService.getEtapesParTuto(this.id).subscribe(data=>{
      this.Legume1 = data;
      this.video = data.video;
      console.log(this.Legume1)
     })
    }
+
+   getEtapeTutoLegumeFruit(){
+    this.legumeFruitService.getEtapeLegumeFruit().subscribe(data=>{
+      this.etape = data;
+      console.log(this.Legume1)
+     })
+  }
     //METHODE PERMETTANT DE REVENIR A LA PAGE PRECEDENTE
   back(): void {
     window.history.back()

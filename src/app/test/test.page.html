@@ -1,23 +1,23 @@
 <ion-content fullscreen  scroll-y="false">
  <div  class="container-fluid contourEspace">
   <ion-slides pager="true">
-    <ion-slide>
+    <ion-slide *ngFor="let Legume1 of Legume1" >
       <div class="slide">
         <!-- <ion-icon class="button mx-4 text-end mt-4" (click)="back()" name="arrow-back-outline" style=" 
       color: black;"></ion-icon> -->
       <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
-        <img src="../../assets/Soutenance/illustrations/Environment-rafiki.png" />
+        <img src="{{Legume1.photo}}" />
       </div>  
         <div class="mt-4">
-          <h2 class="mb-4 mt-4 fw-bolder">ETAPE 1</h2>
+          <h2 class="mb-4 mt-4 fw-bolder">{{Legume1.titre}}</h2>
         <p>
-          {{etape1}}
+          {{Legume1.etape}}
         </p>
         </div>
       
     </ion-slide>
 
-    <ion-slide>
+    <!-- <ion-slide>
       <div class="parent">
         <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
       
@@ -55,7 +55,7 @@
           {{etape4}}
         </p>
       
-    </ion-slide>
+    </ion-slide> -->
 
 
     <!-- <ion-slide>
