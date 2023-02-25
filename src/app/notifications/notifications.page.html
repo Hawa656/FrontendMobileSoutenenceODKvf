@@ -1,0 +1,19 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h2 class="fw-bold text-center " style="margin-top: 50px;" >Notifications</h2>
+    <h2 class="fw-bold text-center " style="margin-top: 50px;"*ngIf="notification && notification.length == 0" >Pas de notification</h2>
+    <div class="row" *ngIf="notification && notification.length > 0">
+      <div *ngFor="let Notification of notification" >
+        <div class="" style="background: #F0F0F0; border-radius: 5px;">
+          <p style="font-size: 11px; font-weight: bold;"> {{Notification.titreNotif}}</p>
+          <span style="background: red;"><p>11h30</p></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

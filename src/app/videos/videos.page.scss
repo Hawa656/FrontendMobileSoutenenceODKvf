@@ -32,6 +32,7 @@ h1{
 }
 .video{
    background-color: white;
+   border: 55px;
 
    
 }
@@ -82,3 +83,23 @@ h1{
     
     position: relative;
 }
+// ================SCROLL-BAR========================
+ion-content {
+    --offset-bottom:auto !important;
+    --overflow: hidden;
+    background-color: #fff;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.vid{
+    border: 55px;
+}
+.toolbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// ================SCROLL-BAR========================

@@ -1,0 +1,68 @@
+<ion-content fullscreen  scroll-y="false">
+  <div  class="container-fluid contourEspace">
+   <ion-slides pager="true">
+     <ion-slide *ngFor="let Legume1 of Legume1" >
+       <div class="slide">
+         <!-- <ion-icon class="button mx-4 text-end mt-4" (click)="back()" name="arrow-back-outline" style=" 
+       color: black;"></ion-icon> -->
+       <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
+         <img src="{{Legume1.photo}}" />
+       </div>  
+         <div class="margin" style="margin-top: 50px;">
+           <h2 class="mb-4 mt-4 fw-bolder" style="margin-top: 50px;">{{Legume1.titre}}</h2>
+         <p>
+           {{Legume1.etape}}
+         </p>
+         </div>
+       
+     </ion-slide>
+ 
+     <!-- <ion-slide>
+       <div class="parent">
+         <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
+       
+         <div class="child1">
+           <img src="../../assets/Soutenance/illustrations/Environment-amico.png" />
+         </div>
+         <div class="container-fluid contenu pt-4 child2">
+           <h2 class="mb-4  fw-bolder">ETAPE 2</h2>
+         <p>
+           {{etape2}}
+         </p>
+         </div>
+       </div>
+     </ion-slide>
+ 
+     <ion-slide>
+       <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
+       
+       <img src="../../assets/Soutenance/illustrations/Stay Positive-rafiki.png" />
+       <h2 class=" fw-bolder mt-0 ">ETAPE 3</h2>
+       <div class="contenu1 ">
+         <p>
+           {{etape3}}
+       </div>
+     </ion-slide>
+ 
+     <ion-slide>
+       <div class="slide">
+         <ion-icon (click)="back()" name="close-outline" class="text-end icon" style="position: relative; top: 8%;"></ion-icon>
+       
+         <img src="../../assets/Soutenance/illustrations/Environment-rafiki.png" />
+       </div>  
+         <h2 class="mb-4 mt-4 fw-bolder">ETAPE 4</h2>
+         <p>
+           {{etape4}}
+         </p>
+       
+     </ion-slide> -->
+ 
+ 
+     <!-- <ion-slide>
+       <img src="./slide-4.png" />
+       <h2>Ready to Play?</h2>
+       <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+     </ion-slide> -->
+   </ion-slides>
+  </div>
+ </ion-content>

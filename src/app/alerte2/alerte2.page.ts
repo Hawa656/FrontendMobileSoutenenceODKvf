@@ -13,8 +13,8 @@ export class Alerte2Page implements OnInit {
   id:any
   form: any = {
     titre: null,
-    date:null,
-    nbreJour:null
+    dateAcitivte:null,
+    heureNotif:null
     
   };
   isSuccessful = false;
@@ -28,9 +28,10 @@ export class Alerte2Page implements OnInit {
   }
 
   onSubmit(): void {
-    const { titre,date,nbreJour} = this.form;
+    const { titre,dateAcitivte,heureNotif} = this.form;
     console.log('titre'+titre)
-    console.log('date'+date)
+    console.log('date'+dateAcitivte)
+    console.log('date'+heureNotif)
     this.userService.PostTache(this.form, this.User.id).subscribe({
       next: data => {
         console.log(data);

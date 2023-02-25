@@ -41,4 +41,14 @@ export class UserService {
     console.log(id)
     return this.http.post(`http://localhost:8080/api/tache/ajouttache/${id}`,donnee)
   }
+
+  // LISTE NOTIFICATION DE USER CONNECTER
+  getNotification(id:any):Observable<any>{
+    return this.http.get(`http://localhost:8080/api/notification/lireNotifUserConecter/${id}`)
+  }
+
+  // LISTE Tache DE USER CONNECTER
+  getTache(idUser:any):Observable<any>{
+    return this.http.get(`http://localhost:8080/api/tache/lireTaheUserConecter/${idUser}`)
+  }
 }

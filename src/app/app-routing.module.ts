@@ -82,6 +82,14 @@ const routes: Routes = [
   {
     path: 'forget-motde-passe',
     loadChildren: () => import('./forget-motde-passe/forget-motde-passe.module').then( m => m.ForgetMotdePassePageModule)
+  },
+  {
+    path: 'testfruit/:id',
+    loadChildren: () => import('./testfruit/testfruit.module').then( m => m.TestfruitPageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
   }
 ];
 @NgModule({

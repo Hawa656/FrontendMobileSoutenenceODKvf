@@ -34,6 +34,7 @@ Connexion(): void {
 
     this.authService.login(numeroOrEmail, password).subscribe({
       next: data => {
+        location.reload();
         this.storageService.saveUser(data);
 
         this.isLoginFailed = false;
@@ -42,7 +43,7 @@ Connexion(): void {
 
        
         // POUR REDIRIGER VERS LA PAGE D4ACCUEIL UNE FOIS CONNECTE
-        if(this.roles[0]=="ROLE_USER"){
+        if(this.roles[0]=="ROLE_USER"||this.roles[0]=="ROLE_ADMIN"){
           this.route.navigate(['/tabs/accueil'])
         }
         if (this.roles[0]=="ROLE_ADMIN") {

@@ -28,7 +28,7 @@ export class ForumDetailPage implements OnInit {
   ngOnInit() {
 
     this.User = this.storageService.getUser();
-
+this.lesReponsesPArQuestion()
 }
 
 // POUR RECUPERER LA DATE SEPAREMENT
@@ -49,7 +49,7 @@ onSubmit(): void {
   this.id= this.route.snapshot.params["id"]
   this.lesReponsesPArQuestion();
   const { reponse} = this.form;
-  // console.log('dfghjklmque reponse'+ reponse);
+   console.log('dfghjklmque reponse'+ this.id);
   this.forumService.PostReponse(reponse, this.id,this.User.id).subscribe({
     next: data => {
       this.lesReponsesPArQuestion();

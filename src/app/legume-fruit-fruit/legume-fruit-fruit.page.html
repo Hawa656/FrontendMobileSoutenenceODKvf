@@ -59,7 +59,39 @@
   </div>
 <!-- =====================Contenu Tutoriel ===================== -->
   <div *ngIf="valueSelected == 'Tutoriel'">
-   <div  class="container-fluid  mt-2">
+
+    <div class="container-fluid  contenu1 mt-2 ">
+      
+      <div class="row  m-0  pt-4" style="display: flex;
+      justify-content: center;
+      align-items: center;">
+        <ion-button (click)="goToDetailLegume(Fruit.id)"  class="m-0 mt-4" style="background: #328923;width: 60%; border-radius: 14px; color: white; margin-right: 10px ; background: none;">Commencer </ion-button>
+      </div>
+  
+      <div>
+        <div class="row  m-0 mt-4">
+          <video *ngIf="Fruit1 && Fruit1.video"  controls src="http://127.0.0.1/videoSoutenance/{{Fruit1.video}}" class="video "></video>
+          <h4 *ngIf="Fruit1 && Fruit1.titre"class="textImg ">{{Fruit1.titre}}</h4>
+         </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- <div  class="container-fluid  mt-2">
       <div class="row mt-4 px-2">
         
         <h3  *ngIf="Fruit && Fruit.tutoriels.titre" class="title fw-bolder">{{Fruit.tutoriels.titre}}</h3>
@@ -89,7 +121,7 @@
          <h4 class="textImg mx-3">Culture du grenadier</h4>
         </div>
        </div>
-   </div>
+   </div> -->
    
   </div>
   </div>

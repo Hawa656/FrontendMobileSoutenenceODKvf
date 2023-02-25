@@ -20,7 +20,7 @@
 <!-- ================SEARCHBAR=================== -->
   <div class="container mb-2">
     <div class="filtreSearchBar row ">
-      <div class="col-6">
+      <div class="col-4">
         <!--div class="filtre ">
           <ion-icon class="icon1 " name="filter-outline" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></ion-icon>
           <-- <ion-icon class="icon2" name="chevron-down-outline"></ion-icon> >
@@ -45,7 +45,7 @@
         </div>
 
       </div>
-      <div class="col-6 searchbar">
+      <div class="col-8 searchbar">
         <ion-searchbar [(ngModel)]="searchText"></ion-searchbar>
       </div>
     </div>
@@ -55,8 +55,8 @@
 <div class="card">
   
     <div class="container video">
-   <div class="row" *ngFor="let  Video of videoer | filter:searchText">
-    <video  controls src="http://127.0.0.1/videoSoutenance/{{Video.video}}" class="img2" autoplay type="video/mp4"></video>
+   <div class="row"  *ngFor="let  Video of videoer | filter:searchText">
+      <video  controls src="http://127.0.0.1/videoSoutenance/{{Video.video}}" class="img2" autoplay type="video/mp4"></video>
     <h4 class="textImg mx-3">{{Video.titre}}</h4>
    </div>
   </div>

@@ -66,6 +66,10 @@ const routes: Routes = [
       {
         path: 'forum-detail',
         loadChildren: () => import('../forum-detail/forum-detail.module').then( m => m.ForumDetailPageModule)
+      },
+      {
+        path: 'notifications',
+        loadChildren: () => import('../notifications/notifications.module').then( m => m.NotificationsPageModule)
       }
       // {
       //   path: '',

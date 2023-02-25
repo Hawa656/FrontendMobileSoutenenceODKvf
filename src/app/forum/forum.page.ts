@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ForumService } from '../_services/forum.service';
 import { StorageService } from '../_services/storage.service';
 
@@ -11,6 +11,7 @@ import { StorageService } from '../_services/storage.service';
 export class ForumPage implements OnInit {
 
   User: any
+ 
   postreponse: any
   reponse: any
   idquestion: any
@@ -29,9 +30,10 @@ export class ForumPage implements OnInit {
   user: any;
   // pour la barre de recherche:
   searchText: any;
-  constructor(private forumService: ForumService, private route: Router, private serviceStorqge: StorageService) { }
+  constructor(private route1 : ActivatedRoute,private forumService: ForumService, private route: Router, private serviceStorqge: StorageService) { }
 
   ngOnInit() {
+    this.lesReponsesPArQuestion()
 
     // AFFICHAGE LISTE QUESTION
     this.User = this.serviceStorqge.getUser();
@@ -55,11 +57,22 @@ export class ForumPage implements OnInit {
     })
   }
 
+  lesReponsesPArQuestion(){
+    this.id= this.route1.snapshot.params["id"]
+
+    this.forumService.getReponsesParQuestion(this.id).subscribe(data=>{
+      this.reponse = data.lenght;
+      
+      // console.log('fdghjkllllllllkj'+ this.reponse)
+    })
+  }
+
   onSubmit(): void {
     const { question } = this.form;
     this.lesReponses()
     this.forumService.PostQuestion(question, this.User.id).subscribe({
       next: data => {
+        location.reload();
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;

@@ -23,38 +23,17 @@
           </div>
         </div>
 
-        <div class="row margin">
+        <div class="row margin" *ngFor="let Tache of tache">
           <div class="col-3 d-flex align-items-center justify-content-center ">
             <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
           </div>
           <div class="col-9 tout">
-            <h3>8 Octobre 2023</h3>
-            <p class="p ">Recevoir une alerte pour arroser vos plantes</p>
-            <p class="p P2">Terminée</p>
+            <h3>{{Tache.dateAcitivte}}</h3>
+            <p class="p ">{{Tache.titre}}</p>
+            <p class="p P2">{{Tache.estatut}}</p>
           </div>
       </div>
 
-      <div class="row margin ">
-        <div class="col-3 d-flex align-items-center justify-content-center ">
-          <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-        </div>
-        <div class="col-9 tout">
-          <h3>8 Octobre 2023</h3>
-          <p class="p ">Recevoir une alerte pour arroser vos plantes</p>
-          <p class="p">Terminée</p>
-        </div>
-    </div>
-
-    <div class="row margin ">
-      <div class="col-3 d-flex align-items-center justify-content-center ">
-        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-      </div>
-      <div class="col-9 tout">
-        <h3>8 Octobre 2023</h3>
-        <p class="p ">Recevoir une alerte pour arroser vos plantes</p>
-        <p class="p">Terminée</p>
-      </div>
-  </div>
       </div>
     </div>
   

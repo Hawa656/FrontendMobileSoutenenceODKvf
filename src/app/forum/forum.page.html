@@ -31,7 +31,7 @@
     </div>
 
     <div>
-      <ion-fab-button id="open-custom-dialog">
+      <ion-fab-button id="open-custom-dialog" style="--background: #328923;">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </div>
@@ -59,8 +59,8 @@
 
           <div class="commentaires mb-2">
             <div>
-              <ion-fab-button style="width: 25px !important; height: 25px !important;">
-                22
+              <ion-fab-button style="width: 25px !important; height: 25px !important; --background: #2D6650;">
+                {{Question.nbrereponse}}
               </ion-fab-button>
             </div>
             <div>
@@ -146,23 +146,34 @@
       <div class="forms">
         <h2>Vous avez une Question? posez la! </h2>
 
-        <div>rr</div>
-
         <form name="contact-form" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
           novalidate>
-          <ion-item counter="true">
-            <ion-label position="floating">Question ou Thème</ion-label>
-            <ion-input type="text" name="question" [(ngModel)]="form.question" required #question="ngModel"
-              [ngClass]="{ 'is-invalid': f.submitted && question.errors }"></ion-input>
-          </ion-item>
-          <div class="align-center">
-            <button>Poster la question</button>
+          <div class="row">
+            <div class="col-8">
+              <ion-item counter="true">
+                <ion-label position="floating"></ion-label>
+                
+                  <ion-input type="text" name="question" [(ngModel)]="form.question" required #question="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && question.errors }"></ion-input>
+                
+              </ion-item>
+            </div>
+            <div class="col-4">
+              
+              <ion-button type="submit" style="--background: none; --border: none; --box-shadow: none;">
+                <ion-icon name="navigate-circle-outline" class="fs-6" style="background: #328923; border-radius:5px ;">
+                </ion-icon>
+              </ion-button>
+            </div>
+          </div>
+          
+           
 
             <div class="alert alert-warning" *ngIf="f.submitted && isSuccessful">
               question non Ajouter!
             </div>
 
-          </div>
+        
         </form>
         <div class="alert alert-success" *ngIf="isSignUpFailed">
           question ajouter avec succès!<br />{{ errorMessage }}
