@@ -38,9 +38,9 @@ export class VideosPage implements OnInit {
   cangement(){
     console.log("ertyui"+this.textFiltree);
     this.videoService.getFiltrerParFruitEtLegume(this.textFiltree).subscribe(data=>{
-      this.video = data;
+      this.videoer = data;
       console.log("filtre")
-      console.log(this.video)
+      console.log(this.videoer)
   }
     )
   }

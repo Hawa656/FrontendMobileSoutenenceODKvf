@@ -69,7 +69,17 @@
          </div>
          <p class="text " *ngIf="Legume && Legume.description">{{Legume.description}}</p>
       </div>
+
+      <div class="fw-bolder list" style="color: white;">
+        <ul> 
+          <li>Arrosage : {{Legume.arrosage}}</li>
+          <li>Periode normale : {{Legume.periodeNormal}}</li>
+        </ul>
+      </div>
+      
     </div>
+
+   
    
   </div>
 <!-- =====================Contenu Tutoriel ===================== -->
@@ -117,7 +127,7 @@
     <div class="row  m-0  pt-4" style="display: flex;
     justify-content: center;
     align-items: center;">
-      <ion-button (click)="goToDetailLegume(Legume.id)"  class="m-0 mt-4" style="background: #328923;width: 60%; border-radius: 14px; color: white; margin-right: 10px ; border: none;">Commencer </ion-button>
+      <button (click)="goToDetailLegume(Legume.id)"  class="m-0 mt-4 p-3" style="background: #328923; width: 60%; border-radius: 14px; color: white; margin-right: 10px ; border: none;">Commencer </button>
     </div>
 
     <div>

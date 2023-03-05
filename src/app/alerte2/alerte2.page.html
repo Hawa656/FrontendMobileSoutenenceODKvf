@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-icon class="button mx-4 " (click)="back()" name="arrow-back-outline" style=" display: flex;
+    <ion-icon class="button mx-4 " (click)="back();rechargement()" name="arrow-back-outline" style=" display: flex;
       
       align-items: center;
       justify-content: center;color: black;"></ion-icon>
@@ -8,63 +8,76 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h3 class="title">Créer une nouvelle alerte</h3>
-  <div class="container-fluid contenu">
-    <p class="pt-4">Preciser la date et l’heure</p>
-    <!-- ===========CALENDAR============= -->
-    <div class="container mb-3 calend" >
-      <ion-datetime color="rose"></ion-datetime>
-    </div>
-    <div class="container">
-      <!-- <p>Titre</p> -->
-      <!-- ===========INPUT============= -->
-      <div class="row mb-4">
-     
-
-        <form name="contact-form" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
-  novalidate>
+<ion-content >
   
+  <h3 class="title fw-bold fs-2" style="margin-top: 40px;">Créer une nouvelle Tâche</h3>
+  <div class=" contenu">
+    <p class="pt-4 mx-3">Preciser la date et l’heure</p>
+    <!-- ===========CALENDAR============= -->
+    
+    <!-- <calendar[(ngModel)]="select">
+      </calendar> -->
+      <div class="container">
+        <!-- <p>Titre</p> -->
+        <!-- ===========INPUT============= -->
+        <div class="row mb-4">
 
-    <div class="row align-items-center">
-      <div class="col-9">
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1" class="fw-bold mb-1">Titre</label>
-          <input class="form-control" name="titre" id="exampleFormControlTextarea1" rows="3" placeholder="titre de votre tâche."
-          [(ngModel)]="form.titre" required #titre="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && titre.errors }"
+
+          <form 
+          *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm" novalidate
           >
+
+            <div class="row">
+              <div class="col-6">
+                <div>
+                  <div class=" mb-3 calend" >
+                    <input class="t" name="dateAcitivte" [(ngModel)]="form.dateAcitivte" type="date" color="rose" #dateAcitivte="ngModel">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div>
+                  <div class=" mb-3 calend" >
+                    <input class="t" name="heureNotif" [(ngModel)]="form.heureNotif" type="time" color="rose" #heureNotif="ngModel">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center">
+              <div class="col-8">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1" class="fw-bold mb-1">Titre</label>
+                  <input class="form-control" name="titre" id="exampleFormControlTextarea1" rows="3"
+                    placeholder="titre de votre tâche." [(ngModel)]="form.titre" required #titre="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && titre.errors }">
+                </div>
+              </div>
+              <div class="col-4 mt-3">
+                <ion-button type="submit" class="">
+                  <ion-icon name="navigate-circle-outline" class="i">
+                  </ion-icon>
+                </ion-button>
+
+              </div>
+            </div>
+            
+      <div class="alert  alert-success" *ngIf="f.submitted && isSignUpFailed">
+        Tâche Planifier avec succès! <br />{{ errorMessage }}
+      </div>
+          </form>
+          <div class="alert alert-success" *ngIf="isSuccessful">
+            Tâche  non planifiée
+          </div>
         </div>
       </div>
-      <div class="col-3">
-        <ion-button type="submit">
-          <ion-icon name="navigate-circle-outline" class="fs-1">
-          </ion-icon>
-        </ion-button>
-  
-      </div>
-    </div>
-  </form>
+      
 
-      </div>
-    </div>
-    <div class="container mb-4">
-     <div class="row">
-      <!-- ===========TOGGLE============= -->
-      <div class="col-6 ">
-        <!-- <p>Alarm</p>
-        <ion-toggle  [checked]="true"></ion-toggle> -->
-      </div>
-      <!-- <div class="col-6 mt-4">
-        <ion-button>Enregistrer</ion-button>
-      </div> -->
-     </div>
-    </div>
-    
   </div>
 
 
-  
+
 
 
 </ion-content>

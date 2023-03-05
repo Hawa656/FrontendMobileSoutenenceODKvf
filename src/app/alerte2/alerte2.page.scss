@@ -12,15 +12,33 @@ ion-content {
   }
 }
 // ================SCROLL-BAR========================
+.img{
+  width: 100%;
+ height: 300px;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.41), rgba(0, 0, 0, 0.41)), url(../../assets/Soutenance/Alerte3.png);
+  background-size: cover;
+}
+input{
+  height: 40px;
+  border-radius: 5px;
+}
+.t{
+  border: none;
+}
 .contenu{
     //background:#71A255;
     background: rgba(45, 102, 80, 0.22);
     border-radius: 34px 40px 0px 7px;
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     position: relative;
-    //z-index: 10;
-    margin-top: -30px;
+    // top: 200px;
+    z-index: 10;
+    // margin-top: 30px;
+    // margin-bottom: 0;
+    // padding: 0;
 
 }
 .title{
@@ -38,9 +56,12 @@ ion-button{
     color: white;
     --border-radius: 12px;
     width: 100%;
-    height: 60%;
+    height: 100%;
     font-size: 10px;
     margin-top: 15px;
+}
+.i{
+  font-size: 40px;
 }
 
   .ion-toggle ::ng-deep{

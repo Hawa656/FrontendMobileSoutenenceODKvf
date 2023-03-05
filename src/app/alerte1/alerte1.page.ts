@@ -14,6 +14,7 @@ export class Alerte1Page implements OnInit {
   idUser:any
   tache:any
   id:any
+  tache1:any
 
   constructor(private userService:UserService, private storageService: StorageService) { }
 
@@ -30,10 +31,39 @@ export class Alerte1Page implements OnInit {
       
       this.tache = data;
        console.log(this.tache)
-      //  this.tache = data;
+
+        this.tache1 = data.length
+        console.log("Tache length")
+        console.log(this.tache1)
+
        
       })
   
+  }
+
+  // supprimerTache(id: number) {
+  //   this.userService.supprimerTache(id).subscribe(res => {
+  //       // La tâche a été supprimée avec succès
+  //       console.log('La tâche a été supprimée avec succès', res);
+  //       this.rechargement();
+  //     });
+  // }
+
+  supprimerTache(id_Tache: number) {
+    this.userService.supprimerTache(id_Tache).subscribe(
+      () => {
+        // La tâche a été supprimée avec succès
+       this.rechargement()
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+  
+
+  rechargement(){
+    this.ngOnInit()
   }
   }
 

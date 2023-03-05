@@ -5,8 +5,14 @@
     <ion-content>
       <div class="menu-header-bg "></div>
       <!-- PHOTO PROFIL -->
-      <div class="header-content">
-        <img src="../assets/Soutenance/profil.jpeg" class=" float-right " alt="profil">
+      <div class="header-content" *ngIf="user">
+        <!-- <img src="../assets/Soutenance/profil.jpeg" class=" float-right " alt="profil"> -->
+        
+          <div class="cercle">
+            <span class="noninitial text-uppercase mt-3">{{ user1.prenom.charAt(0) }}{{
+              user1.nom.charAt(0)}}</span>
+          </div>
+        
         <ion-label>
           <h2 class="my-2">{{user1.nom}} {{user1.prenom}}</h2>
         </ion-label>

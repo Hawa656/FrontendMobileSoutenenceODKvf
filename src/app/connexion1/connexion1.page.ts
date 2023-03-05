@@ -46,15 +46,15 @@ Connexion(): void {
         if(this.roles[0]=="ROLE_USER"||this.roles[0]=="ROLE_ADMIN"){
           this.route.navigate(['/tabs/accueil'])
         }
-        if (this.roles[0]=="ROLE_ADMIN") {
-           console.log('veuillez créer un compte utilisateur');
-          //  Swal.fire({  
-          //   icon: 'error',  
-          //   title: 'Oops...',  
-          //   text: 'Something went wrong!',  
-          // })  
+        // if (this.roles[0]=="ROLE_ADMIN") {
+        //    console.log('veuillez créer un compte utilisateur');
+        //   //  Swal.fire({  
+        //   //   icon: 'error',  
+        //   //   title: 'Oops...',  
+        //   //   text: 'Something went wrong!',  
+        //   // })  
            
-        }
+        // }
          
         
         

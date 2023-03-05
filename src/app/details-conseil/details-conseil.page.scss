@@ -6,3 +6,27 @@ margin: 2px auto;
 p{
     font-size: 10px;
 }
+
+.conseil-description {
+    word-wrap: break-word;
+  }
+  
+  .conseil-description p {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+  
+  .conseil-description p:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .conseil-description p {
+      max-width: 15em;
+    }
+  }
+  

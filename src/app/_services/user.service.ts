@@ -51,4 +51,15 @@ export class UserService {
   getTache(idUser:any):Observable<any>{
     return this.http.get(`http://localhost:8080/api/tache/lireTaheUserConecter/${idUser}`)
   }
+  
+   //SUPPRIMER Tache
+  //  supprimerTache(id_Tache:number):Observable<any>{
+  //   console.log("",id_Tache)
+  //   return this.http.delete(`http://localhost:8080/api/tache/supprimerTache/${id_Tache}`);
+  // }
+
+  supprimerTache(id_Tache: number): Observable<any> {
+    return this.http.delete(`http://localhost:8080/api/taches/${id_Tache}`);
+  }
+  
 }

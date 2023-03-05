@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="container-fluid img ">
+  <div class="container-fluid img pt-2" (click)="rechargement()">
    
       <h1 class="titlePlanning text-center">Planning</h1>
     
@@ -19,21 +19,29 @@
         <div class="row  mt-4 mb-4">
           <div class="col-4"></div>
           <div class="col-8" routerLink="/alerte2">
-            <ion-button>Planifier une tâche</ion-button>
+            <ion-button class="button">Planifier une tâche</ion-button>
           </div>
         </div>
+        
+        <p *ngIf="this.tache1 == 0"  style="color: white; margin-top: 60px;">Pas de tâche pour le moment! </p>
 
-        <div class="row margin" *ngFor="let Tache of tache">
-          <div class="col-3 d-flex align-items-center justify-content-center ">
-            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+      
+          
+        <div *ngIf="tache">
+          <div class="row margin" *ngFor="let Tache of tache.reverse()">
+            <div class="col-3 d-flex align-items-center justify-content-center ">
+              <i  class="fa fa-calendar-check-o" aria-hidden="true"></i>
+            </div>
+            <div class="col-9 tout">
+              <h3>{{Tache.dateAcitivte}} à {{Tache.heureNotif}}</h3>
+              <p class="p ">{{Tache.titre}}</p>
+              <p class="p P2">{{Tache.estatut}}</p>
+            </div>
+            <!-- <ion-icon (click)="supprimerTache(Tache.id);rechargement()" class="mb-2" name="trash-outline" style="color: #FFC700; margin-left: 100px; padding: 0;font-size: 20px; "></ion-icon> -->
+            <!-- <span  type="button" class="adpd" ><i class="bi bi-trash text-end" ></i></span> -->
           </div>
-          <div class="col-9 tout">
-            <h3>{{Tache.dateAcitivte}}</h3>
-            <p class="p ">{{Tache.titre}}</p>
-            <p class="p P2">{{Tache.estatut}}</p>
-          </div>
-      </div>
-
+        </div>
+        
       </div>
     </div>
   

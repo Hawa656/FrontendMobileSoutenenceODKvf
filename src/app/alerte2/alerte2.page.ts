@@ -27,23 +27,28 @@ export class Alerte2Page implements OnInit {
     this.User = this.serviceStorage.getUser();
   }
 
+  select : Date | undefined;
+
   onSubmit(): void {
-    const { titre,dateAcitivte,heureNotif} = this.form;
-    console.log('titre'+titre)
-    console.log('date'+dateAcitivte)
-    console.log('date'+heureNotif)
-    this.userService.PostTache(this.form, this.User.id).subscribe({
+    const { titre, dateAcitivte, heureNotif } = this.form;
+    const tache = { titre, dateAcitivte, heureNotif }; // créer un objet avec les propriétés requises
+    console.log(tache); // Vérifiez si l'objet est correctement créé dans la console
+
+    this.userService.PostTache(tache, this.User.id).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        
       },
       error: err => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
     });
+  }
+
+  rechargement(){
+    this.ngOnInit()
   }
 
   //METHODE PERMETTANT DE REVENIR A LA PAGE PRECEDENTE

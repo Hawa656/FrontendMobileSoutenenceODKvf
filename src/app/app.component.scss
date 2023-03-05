@@ -5,6 +5,19 @@
 //     --background: #25503F;
 // }
 
+.cercle {
+   display: flex;
+   justify-content: center;
+   text-align: center;
+    background: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    color: #2D6650;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-left: 78px;
+  }
 
 // ================SCROLL-BAR========================
 ion-content {
@@ -49,7 +62,7 @@ ion-content {
         font-weight: 300;
         color: #ffffff;
         text-align: center;
-        margin-left: 30px;
+        margin-left: 60px;
         // margin-top: 12px;
         // padding-bottom: 120px;
     }

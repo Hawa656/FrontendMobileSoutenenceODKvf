@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { Alerte2PageRoutingModule } from './alerte2-routing.module';
 
 import { Alerte2Page } from './alerte2.page';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Alerte2PageRoutingModule
+    Alerte2PageRoutingModule,
+    NgCalendarModule
   ],
   declarations: [Alerte2Page]
 })

@@ -64,6 +64,20 @@ ion-label {
     color: #fff;
 }
 
+// ================SCROLL-BAR========================
+ion-content {
+    --offset-bottom:auto !important;
+    --overflow: hidden;
+    background-color: #fff;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+
 .contenu1{
     //  background: #E8F2F0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url(../../assets/Soutenance/523.png);
@@ -72,7 +86,7 @@ ion-label {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 40vh;
+    height: 50vh;
 
 }
 

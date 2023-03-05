@@ -10,6 +10,7 @@ import { LegumeFruitService } from '../_services/legume-fruit.service';
 export class TestPage implements OnInit {
   Legume1:any
   Legume : any
+  etape1:any
   
   idLegumesFruits:any
   id: any
@@ -44,7 +45,8 @@ export class TestPage implements OnInit {
 
    getEtapeTutoLegumeFruit(){
     this.legumeFruitService.getEtapeLegumeFruit().subscribe(data=>{
-      this.etape = data;
+      this.etape = data.lenght;
+      this.etape1 = data.lenght;
       console.log(this.Legume1)
      })
   }

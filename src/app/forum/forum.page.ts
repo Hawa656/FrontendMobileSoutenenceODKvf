@@ -68,11 +68,13 @@ export class ForumPage implements OnInit {
   }
 
   onSubmit(): void {
-    const { question } = this.form;
     this.lesReponses()
+    const { question } = this.form;
+
     this.forumService.PostQuestion(question, this.User.id).subscribe({
       next: data => {
-        location.reload();
+       
+        this.lesReponses()
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
@@ -82,7 +84,12 @@ export class ForumPage implements OnInit {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
+      
     });
+
+
+    // location.reload();
+   
   }
 
 

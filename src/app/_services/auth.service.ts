@@ -15,6 +15,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class AuthService {
+  api= "http://localhost:8080/api/auth";
   constructor(private http: HttpClient) {}
 // +++++++++++++++++CONNEXION+++++++++++++++++++++++
   login(numeroOrEmail: string, password: string): Observable<any> {
@@ -43,6 +44,12 @@ export class AuthService {
     );
   }
 
+  
+
+  //RECUPERATION DE L'ID DU LEGUMES 
+  recupererIdLegumeFruit(id:number):Observable<any>{
+    return this.http.get(`${this.api}/RecupererIdUser/${id}`);
+  }
     //Deconnexion
     logout(): Observable<any> {
       const req = new HttpRequest('POST', AUTH_API + 'signout', {}, httpOptions);

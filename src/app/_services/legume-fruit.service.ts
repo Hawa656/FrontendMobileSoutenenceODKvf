@@ -42,4 +42,5 @@ export class LegumeFruitService {
    recupererIdLegumeFruit(id:number):Observable<any>{
     return this.http.get(`${this.api}/RecupererIdLegumeFruit/${id}`);
   }
+
 }

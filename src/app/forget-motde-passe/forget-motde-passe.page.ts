@@ -29,7 +29,7 @@ export class ForgetMotdePassePage implements OnInit {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         
-        this.route.navigate(['/otp'])
+        this.route.navigateByUrl('/connexion1')
       },
       error: err => {
         this.errorMessage = err.error.message;
